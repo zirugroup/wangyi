@@ -1,13 +1,13 @@
 <template>
   <div id="app">
     <router-view></router-view>
-    <footer>
-    <router-link to="/">首页</router-link>
-    <router-link to="/topic">专题</router-link>
-    <router-link to="/car">购物车</router-link>
-    <router-link to="/classify">分类</router-link>
-    <router-link to="/mine">个人</router-link>
-  </footer>
+    <footer v-if="$route.path!==('/carorder'||'/item')">
+      <router-link to="/">首页</router-link>
+      <router-link to="/topic">专题</router-link>
+      <router-link to="/car">购物车</router-link>
+      <router-link to="/classify">分类</router-link>
+      <router-link to="/mine">个人</router-link>
+    </footer>
   </div>
   
 </template>
@@ -19,9 +19,15 @@ export default {
 </script>
 
 <style>
+html{
+  font-size: 40px;
+}
 *{
   margin : 0;
   padding:0;
+}
+li{
+  list-style: none;
 }
 footer{
   position : fixed;
