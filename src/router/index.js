@@ -24,9 +24,12 @@ import forecast from '@/components/forecast'
 Vue.use(Router)
 
 export default new Router({
-  routes: [
+  routes: [{
+    path: '/',
+      redirect: "/home",
+  },
     {
-      path: '/',
+      path: '/home',
       component: home,
     },
     {

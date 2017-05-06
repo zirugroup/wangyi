@@ -10,19 +10,46 @@
 		</div>
 		<div class="car_empty">
 			<div class="empty_car"></div>
-			<p>去添点什么吧</p>
+			<p>去添点什么吧{{address}}</p>
 		</div>
 		<div class="car_like">
-			<p>猜你喜欢</p>
-			<
+			<p>猜你喜欢</p>			
+			<div class="likeItems">
+				<dl  v-for="x in carlike">
+					<dt><img :src="x.listPicUrl"></dt>
+					<dd class="likeItems_news">{{x.simpleDesc}}</dd>
+					<dd class="likeItems_name">{{x.name}}</dd>
+					<dd class="likeItems_price">￥{{x.retailPrice}}</dd>
+				</dl>
+			</div>
 		</div>
 		
 		<router-link to="/carorder">下单</router-link>
 	</div>
 </template>
 <script>
+	import Vue from "vue"
+	import VueResource from "vue-resource"
+	Vue.use(VueResource)
 	export default{
-
+		data (){
+			return {
+				address : "aaaa",
+				carlike : []
+			}
+		},
+		mounted (){
+			var vm = this;
+			$.ajax({
+                type:"get",
+                url : "../../static/json/carlike.json",
+                dataType:"json",
+                success:function(res){
+                    vm.carlike = res.data.items;
+                    console.log(res.data.items)
+                }
+            })
+		}
 	}
 </script>
 <style lang="css">
@@ -34,7 +61,7 @@
 		height: 1.3rem;
 		width: 100%;
 		color: #333;
-		line-height: 1.575rem;
+		line-height: 1.3rem;
 		text-align: center;
 		font-size: 0.55rem;
 	}
@@ -75,5 +102,47 @@
 		background-position: 50%; 
 		background-size: auto 100%;
 
+	}
+	.car_like p{
+		font-size: 0.4rem;
+		height: 1.5rem;
+		line-height: 1.5rem;
+		text-align: center;
+	}
+	.likeItems dl{
+		background-color: #F4F4F4;
+		float: left;
+		width: 49%;
+		margin-bottom: 0.4rem;
+	}
+	.likeItems dl:nth-of-type(even){
+		float: right;
+	}
+	.likeItems dl img{
+		width: 100%;
+	}
+	.likeItems dd{
+		text-indent: 10px;
+	}
+	.likeItems_news{
+		background-color: #F1ECE2;
+		color: #9F8A60;
+		font-size: 0.3rem;
+		line-height: 1rem;
+		height: 1rem;
+	}
+	.likeItems_name{
+		white-space: nowrap;
+		overflow:hidden;
+		text-overflow:ellipsis;
+		font-size: 0.33rem;
+		background-color: #fff;
+		line-height: 1rem;
+		height: 1rem;
+	}
+	.likeItems_price{
+		background-color: #fff;
+		font-size: 0.33rem;
+		color: #b4282d;
 	}
 </style>
