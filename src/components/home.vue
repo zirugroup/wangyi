@@ -14,6 +14,51 @@
 			<li><a href="">饮食</a></li>
 			<li><a href="">志趣</a></li>
 		</ul>
+		<div class="hm-main">
+			<div class="swiper-container" id="swiper-container1">
+		        <div class="swiper-wrapper">
+		            <div class="swiper-slide">
+		            	<div class="recommendHtml">
+		            		<div class="swiper-container" id="swiper-container2">
+		            			<div class="swiper-wrapper">
+		            				<div class="swiper-slide"><img src="../assets/banner0.jpg"></div>
+		            				<div class="swiper-slide"><img src="../assets/banner1.jpg"></div>
+		            				<div class="swiper-slide"><img src="../assets/banner2.jpg"></div>
+		            				<div class="swiper-slide"><img src="../assets/banner3.jpg"></div>
+		            				<div class="swiper-slide"><img src="../assets/banner4.jpg"></div>
+		            			</div>
+		            			<div class="swiper-pagination"></div>
+		            		</div>
+		            		<div>
+		            			轮播图以后的内容
+		            		</div>
+		            	</div>
+		            </div>
+		            <div class="swiper-slide">
+		            	<div class="timeHtml">
+		            		限时购
+		            	</div>
+		            </div>
+		            <div class="swiper-slide">
+						<div class="timeHtml">
+		            		居家
+		            	</div>
+		            </div>
+		            <div class="swiper-slide">
+		            	<div class="kitchen">餐厨</div>
+		            </div>
+		            <div class="swiper-slide">
+		            	<div class="armature">配件</div>
+		            </div>
+		            <div class="swiper-slide">服装</div>
+		            <div class="swiper-slide">洗护</div>
+		            <div class="swiper-slide">婴童</div>
+		            <div class="swiper-slide">杂货</div>
+            		<div class="swiper-slide">饮食</div>
+            		<div class="swiper-slide">志趣</div>
+        		</div>
+   			</div>
+		</div>
 		<router-link to="/brand">品牌</router-link>
 		<router-link to="/hotrecommend">热门推荐</router-link>
 	</div>
@@ -23,9 +68,9 @@
 	import VueResource from "vue-resource"
 	Vue.use(VueResource)
 	export default{
-		data: {
+		// data: {
 
-		},
+		// },
 		mounted: function(){
 			// this.$http.get("../static/")
 		}
