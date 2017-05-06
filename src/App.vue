@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <router-view></router-view>
-    <footer>
+    <footer v-if =" $route.path == '/' || $route.path == '/car' || $route.path == '/topic' || $route.path == '/classify' || $route.path == '/mine' ">
       <router-link to="/">首页</router-link>
       <router-link to="/topic">专题</router-link>
       <router-link to="/car">购物车</router-link>
