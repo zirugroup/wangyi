@@ -1,5 +1,6 @@
 <template lang="html">
 	<div class="car">
+		<router-link to="item">单品</router-link>
 		<div class="car_header">
 			<div class="car_title">购物车</div>
 			<ul>
