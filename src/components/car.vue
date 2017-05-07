@@ -21,6 +21,7 @@
 					<dd class="likeItems_name">{{x.name}}</dd>
 					<dd class="likeItems_price">￥{{x.retailPrice}}</dd>
 				</dl>
+				<div class="car_clear"></div>
 			</div>
 		</div>
 		
@@ -102,6 +103,15 @@
 		background-position: 50%; 
 		background-size: auto 100%;
 
+	}
+	.car_like{
+		padding: 0 0.25rem;
+		margin-bottom: 0.9rem;
+	}
+	.car_clear{
+		width: 0;
+		height: 0;
+		clear: both;
 	}
 	.car_like p{
 		font-size: 0.4rem;
