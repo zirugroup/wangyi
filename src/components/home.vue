@@ -71,6 +71,9 @@
 		// data: {
 
 		// },
+		methods: function{
+
+		},
 		mounted: function(){
 			// this.$http.get("../static/")
 		}
