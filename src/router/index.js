@@ -1,6 +1,19 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import home from '@/components/home'
+
+import hmRecommend from '@/components/hmRecommend'
+import hmTimeLimit from '@/components/hmTimeLimit'
+import hmLive from '@/components/hmLive'
+// import hmkitchen from '@/components/hmkitchen'
+// import hmArmature from '@/components/hmArmature'
+// import hmClothes from '@/components/hmClothes'
+// import hmClean from '@/components/hmClean'
+// import hmBaby from '@/components/hmBaby'
+// import hmGoods from '@/components/hmGoods'
+// import hmFood from '@/components/hmFood'
+// import hmBent from '@/components/hmBent'
+
 import brand from '@/components/brand'
 
 import topic from '@/components/topic'
@@ -26,12 +39,28 @@ Vue.use(Router)
 export default new Router({
   routes: [{
     path: '/',
-      redirect: "/home",
+      redirect: "/home/hmRecommend",
   },
-    {
-      path: '/home',
-      component: home,
+  {
+    path: '/home',
+    component: home,
+    children : [{
+      path: "hmRecommend",
+      component : hmRecommend
     },
+    {
+      path: "hmTimeLimit",
+      component : hmTimeLimit
+    },
+    {
+      path: "hmLive",
+      component : hmLive
+    }]
+  },
+    // {
+    //   path: '/home',
+    //   component: home,
+    // },
     {
       path: '/brand',
       component: brand
