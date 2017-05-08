@@ -9,13 +9,12 @@
       <router-link class="index_mine" to="/mine" active-class="active_index_mine"><span>个人</span></router-link>
     </footer>
   </div>
-  
 </template>
 
 <script>
-export default {
-  name: 'app'
-}
+    export default {
+        name: 'app'
+    }
 </script>
 
 <style>
