@@ -1,15 +1,17 @@
 <template lang="html">
 	<div class="manageAddress">
 		<header>
-			<span class="back">&lt;</span>
+			<span class="back"><router-link to="mine">&lt;</router-link></span>
 			<span class="addman">地址管理</span>
 		</header>
-		<main>
+		<main class="manageAddrMain">
 			
 		</main>
+		<router-link to="addAddress" class="fota">
 		<footer>
-				<span>+新建地址</span>
+				<span class="footspan">+新建地址</span>
 		</footer>
+		</router-link>
 	</div>
 </template>
 <script>
@@ -35,7 +37,7 @@ html {font-size:40px;}
 }
 .manageAddress main{
 	width:100%;
-	height:15rem;
+	height:15.3rem;
 	background: #F4F4F4 url(../assets/noAddress.png) no-repeat 50% 40%;
 	background-size:4.6rem 4.6rem;
 }
@@ -43,13 +45,14 @@ html {font-size:40px;}
 	position: fixed;
 	z-index:2;
 	width:80%;
-	padding:0.2rem 0.4rem;
+	height:1rem;
+	padding:0 0.4rem;
 	border:1px solid #f00;
 	left:0.5rem;
 	bottom:0;
 	background:#F4F4F4; 
 }
-.manageAddress footer span {
+.manageAddress .footspan {
 	font-size:0.5rem;
 	text-align:center;
 	line-height: 0.8rem;

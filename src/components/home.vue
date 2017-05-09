@@ -16,7 +16,6 @@
 						{{x.name}}
 				</router-link>
 			</ul>
-
 		</div>
 		<router-view></router-view>
 	</div>
