@@ -6,22 +6,19 @@
 				<router-link to="/home/hmRecommend" tag="li" class="hm-nav-active">
 					推荐
 				</router-link>
-				<router-link to="/home/hmTimeLimit" tag="li" class="hm-li">
+				<router-link to="/home/hmTimeLimit" tag="li" class="hm-li" >
 					限时购
 				</router-link>
 				<!-- <router-link to="/home/hmLive" tag="li" class="hm-li">
 					居家
 				</router-link> -->
-				<router-link to="/home/hmLive" tag="li" v-for=" x in headCateList ">
-					{{x.name}}
-				</router-link>
+				<!-- <router-link to="/home/hmLive" tag="li" v-for=" (x, index) in headCateList" :data-index="index" v-on:click="onclick($event, index)">
+					{{x.name}} -->
+					<router-link v-for="(x, index) in headCateList" tag="li" :key="x.id" :to="{path: '/home/hmLive', query:{categoryId: x.id}}" exact>
+						{{x.name}}
+					</router-link>
 			</ul>
 		</div>
-		<!-- <router-link to="/home/hmRecommend"></router-link>
-		<router-link to="/home/hmTimeLimit"></router-link>
-		<router-link to="/home/hmLive"></router-link>
-		<router-link to="/brand">品牌</router-link>
-		<router-link to="/hotrecommend">热门推荐</router-link> -->
 		<router-view></router-view>
 	</div>
 </template>
@@ -39,9 +36,14 @@
 			// 推荐的项目
 			this.$http.get("../static/recommend.json").then(
 				function(res){
-					// console.log(res.body);
+					console.log(res.body);
 					this.headCateList = res.body.headCateList;//nav
 			});
+		},
+		methods: {
+			onclick: function(event, index){
+				console.log(1);
+			}
 		}	
 	}
 </script>

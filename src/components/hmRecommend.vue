@@ -125,8 +125,7 @@
 				newItemList: [],//新品首发
 				topicList: [],//专题精选
 				recommenList: [],
-				swiper1 : null,
-				swiper2 : null
+				swiper1 : null
 			}
 		},
 		mounted() {
@@ -143,8 +142,6 @@
 			});
 			this.swiper = new Swiper ('.swiper-container', {	    	
 			    	autoplay: 2000,
-			    	nested : true,
-			    	resistanceRatio: 0,
 			    	// 如果需要分页器
 				    pagination: '.swiper-pagination'	   
 			    });

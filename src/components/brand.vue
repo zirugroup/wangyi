@@ -1,17 +1,17 @@
 <template lang="html">
 	<div class="brandHtml">
 		<header>
-			<p>
-				<span class="hideMenu" v-on:click="isShow = !isShow"></span>
+			<div>
+				<span class="hideMenu" v-on:click="isShow = !isShow" v-bind:class="{hideMenuActive: isShow}"></span>
 				<span class="brandTitle"></span>
 				<span class="brandSearch"></span>
-				<span class="brandCar"></span>
-			</p>
+				<router-link to="/car" tag="span" class="brandCar"></router-link>
+			</div>
 			<ul class="hideMenuCont" v-show="isShow">
-				<router-link to="/home" tag="li"><span></span>首页</router-link>
-				<router-link to="/home" tag="li"><span></span>专题</router-link>
-				<router-link to="/home" tag="li"><span></span>分类</router-link>
-				<router-link to="/home" tag="li"><span></span>个人</router-link>
+				<router-link to="/home/hmRecommend" tag="li" class="toHome"><span></span>首页</router-link>
+				<router-link to="/topic" tag="li" class="toTopic"><span></span>专题</router-link>
+				<router-link to="/classify" tag="li" class="toClassify"><span></span>分类</router-link>
+				<router-link to="/mine" tag="li" class="toMine"><span></span>个人</router-link>
 			</ul>
 		</header>
 		<div class="prandName" v-for="x in tagLis">
@@ -45,25 +45,92 @@
 </script>
 <style lang="css">
 	.brandHtml header{
-		padding: 0 10px 0 15px;
-		height: 44px;
+		width: 100%;
+		position: fixed;
+		top: 0;
+		background-color: #fff;
+		z-index: 6;
+		box-sizing: border-box;
 	}
-	/*.brandHtml header p span{
-		display: inline-block;
-		width: 34px;
-		height: 34px;
-		background-color: pink;
-	}*/
+	.brandHtml header div{
+		margin: 7px 15px;
+	}
+	.brandHtml header div::after{
+		content: "";
+		display: block;
+		clear: both;
+	}
+	.brandHtml header div span{
+		width: 30px;
+		height: 30px;
+	}
 	.brandHtml header .hideMenu{
-		vertical-align: top;
-		margin-top: 10px;
 		float: left;
-		width: 28px;
+		width: 30px;
+		height: 30px;
+		background: url(../assets/brandIcon.png) no-repeat 0 -130px;
+		background-size: 300%;
+	}
+	.brandHtml header .hideMenuActive{
+		background: url(../assets/brandIcon.png) no-repeat 0 -160px;
+		background-size: 300%;
+	}
+	.brandHtml header .brandTitle{
+		float: left;
+		width: 100px;
+		margin: 0 50px 0 95px;
+		background: url(../assets/brandIcon.png) no-repeat;
+		background-position: 0 -110px;
+		background-size: 100% auto;
+	}
+	.brandHtml header .brandSearch{
+		float: left;
+		background: url(../assets/brandIcon.png) no-repeat 0 -300px;
+		background-size: 300%;
+	}
+	.brandHtml header .brandCar{
+		float: right;
+		background: url(../assets/brandIcon.png) no-repeat;
+		background-size: 300%;
+	}
+	.brandHtml header .hideMenuCont{
+		padding-bottom: 6px;
+		width: 100%;
+		border-top: 1px solid #f4f4f4;
+		display: flex;
+		justify-content: space-between;
+	}
+	.brandHtml header .hideMenuCont li{
+		font-size: 12px;
+		color: #888;
+		width: 15%;
+		text-align: center;
+		padding: 0 5%;
+	}
+	.brandHtml header .hideMenuCont span{
+		display: block;
+		width:28px;
 		height: 28px;
-		background: pink url(../assets/brandIcon.png) no-repeat -50px 0;
-		/*background-size: 100%;*/
+		margin: 4px 0 0 16px;
+	}
+	.brandHtml header .hideMenuCont .toHome span{
+		background: url(../assets/brandIcon.png) no-repeat 0 -65px;
+		background-size: 320%;  
+	}
+	.brandHtml header .hideMenuCont .toTopic span{
+		background: url(../assets/brandIcon.png) no-repeat 0 -335px;
+		background-size: 320%;  
+	}
+	.brandHtml header .hideMenuCont .toClassify span{
+		background: url(../assets/brandIcon.png) no-repeat 0 -35px;
+		background-size: 320%;  
+	}
+	.brandHtml header .hideMenuCont .toMine span{
+		background: url(../assets/brandIcon.png) no-repeat 0 -265px;
+		background-size: 320%;  
 	}
 	.prandName{
+		margin-top: 44px;
 		width: 100%;
 		height: 200px;
 		position: relative;

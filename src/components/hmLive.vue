@@ -27,24 +27,56 @@
 <script>
 	import Vue from "vue"
 	import VueResource from "vue-resource"	
+	import home from "../components/home.vue"
 	import Swiper from "../../static/js/swiper-3.3.1.min.js"
 	Vue.use(VueResource)
 	export default{
+		components: {home: home},
 		data() {
 			return {
+				categoryId: [],
 				categoryItemList: [],
-				currentCategory: {}
+				currentCategory: {},
+				home: home
+			}
+		},
+		methods: {
+			getData: function(para){
+				this.$http.get("../static/"+para+".json").then(
+					function(res){
+						this.categoryItemList = res.body.categoryItemList;
+						this.currentCategory = res.body.currentCategory;
+				});
 			}
 		},
 		mounted() {
 			// 推荐的项目
-			this.$http.get("../static/living.json").then(
-				function(res){
-					console.log(res.body);
-					this.categoryItemList = res.body.categoryItemList;
-					this.currentCategory = res.body.currentCategory;
-			});
+			console.log(this.categoryId);
+			this.getData(this.categoryId);
+			// this.$http.get("../static/"+this.categoryId+".json").then(
+			// 	function(res){
+			// 		this.categoryItemList = res.body.categoryItemList;
+			// 		this.currentCategory = res.body.currentCategory;
+			// });
+		},
+		created: function(){			
+			this.categoryId = this.$route.query.categoryId;
+		},
+		watch: {
+			"$route": function(to, from){
+				console.log(to.query.categoryId, from.query.categoryId);
+				if(to.query.categoryId !== from.query.categoryId){
+					this.categoryId = to.query.categoryId;
+					this.getData(this.categoryId);
+					// this.$http.get("../static/"+this.categoryId+".json").then(
+					// 	function(res){
+					// 		this.categoryItemList = res.body.categoryItemList;
+					// 		this.currentCategory = res.body.currentCategory;
+					// });
+				}
+			}
 		}
+
 	}
 </script>
 <style lang="css">
