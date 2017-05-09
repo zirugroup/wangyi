@@ -17,6 +17,7 @@ import item from '@/components/item'
 import mine from '@/components/mine'
 import myOrder from '@/components/myOrder'
 import myAddress from '@/components/myAddress'
+import addAddress from '@/components/addAddress'
 import hotrecommend from '@/components/hotrecommend'
 import newItems from '@/components/newItems'
 import forecast from '@/components/forecast'
@@ -42,7 +43,8 @@ export default new Router({
       children : [{
         path: "newItems",
         component : newItems
-      },{
+      },
+      {
         path: "forecast",
         component : forecast
       }]
@@ -90,6 +92,10 @@ export default new Router({
     {
       path: '/myAddress',
       component: myAddress
+    },
+    {
+      path: '/addAddress',
+      component:addAddress
     }
   ]
 })

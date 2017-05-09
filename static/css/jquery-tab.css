@@ -1,0 +1,27 @@
+.z-tab {
+    position: relative;
+}
+
+.z-tab li {
+    /*float: left;*/
+    display: inline-block;
+    list-style: none;
+    padding: 0.1rem 0;
+    cursor: pointer;
+    text-align: center;
+}
+
+.z-tab li:hover {
+    color: #d44848;
+}
+
+.z-tab .active {
+    color: #ccc;
+}
+
+.z-tab .tips {
+    position: absolute;
+    background: #d44848;
+    height: 4px;
+    display: none;
+}
