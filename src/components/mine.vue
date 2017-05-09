@@ -64,12 +64,10 @@ address, caption, cite, code, dfn, th, var { font-style:normal; font-weight:norm
 ul, ol { list-style:none; } 
 body { color:#333; font:12px/20px "SimSun","宋体","Arial Narrow",HELVETICA; background:#fff;/* overflow-y:scroll;*/ overflow-x:hidden;}
 a { color:#666; text-decoration:none; }
-a:visited { color:#666; }
-a:hover, a:active, a:focus { color:#ff8400; text-decoration:underline; }
 html {font-size:40px;}
 .mine{
 overflow:visible;
-margin-bottom:0.6rem;
+margin-bottom:1.2rem;
 }
 .mine-head{
 	width:100%;
@@ -96,14 +94,14 @@ margin-bottom:0.6rem;
 	display:flex;
 	flex-direction:column;
 	color:#fff;
-	font-size:0.5rem;
+	font-size:0.4rem;
 	font-weight:600;
 	letter-spacing:1px;
 	padding:0.4rem 0 0 0.3rem;
 }
 .account-number span:nth-of-type(2){
 	color:#7f7f7f;
-	font-size:0.37rem;
+	font-size:0.3rem;
 	display: inline-block;
 	padding-top:0.1rem;
 }
@@ -116,7 +114,7 @@ margin-bottom:0.6rem;
 	box-sizing:border-box;
 	display: flex;
 	justify-content:space-between;
-	font-size:0.35rem;
+	font-size:0.3rem;
 }
 .tools{
 	padding-left:0.3rem;
@@ -127,7 +125,7 @@ margin-bottom:0.6rem;
 	flex-direction:column;
 }
 .tool a {
-	font-size:0.35rem;
+	font-size:0.3rem;
 	padding-top:0.2rem;
 }
 .tools .ind {

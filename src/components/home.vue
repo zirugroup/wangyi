@@ -50,10 +50,12 @@
 		            			</ul>
 		            		</div>
 		            		<div class="rc-newProd">
+		            			<router-link to="/hotrecommend/newItems">
 		            			<div class="rc-np-title">
 		            				<p>周一至周四·新品首发</p>
 		            				<span>查看全部</span>
 		            			</div>
+		            			</router-link>
 		            			<ul class="rc-np-ul">
 	            					<li v-for="x in rcNewItems">
 	            						<img :src="x.listPicUrl">
