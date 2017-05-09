@@ -29,6 +29,7 @@ li{
   list-style: none;
 }
 footer{
+  z-index: 999;
   position : fixed;
   bottom : 0;
   height : 1.3rem;
