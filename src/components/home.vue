@@ -1,6 +1,6 @@
 <template lang="html">
 	<div class="home">
-		<div class="hmHeader" v-if="$route.path !== '/brand'">
+		<div class="hmHeader" v-if=" $route.path == '/home/hmRecommend'|| $route.path == '/home/hmLive' ">
 			<div class="hm-header">
 				<a class="hm-logo"></a>
 				<input type="text" class="hm-search" placeholder="商品搜索,共4682款好物">
@@ -35,9 +35,9 @@
 			// 推荐的项目
 			this.$http.get("../static/json/recommend.json").then(
 				function(res){
-					console.log(res.body);
+					// console.log(res.body);
 					this.headCateList = res.body.headCateList;//nav
-					console.log(this.headCateList)
+					// console.log(this.headCateList);
 			});
 		}
 	}
