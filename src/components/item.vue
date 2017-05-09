@@ -13,7 +13,7 @@
 						</li>
 						<li class="item_num">
 							<span>已选择：1罐装 x1</span>
-							<i></i>
+							<i></i>AAZ
 						</li>
 						<li class="item_active"><div><span>3个促销活动：</span><span class="item_active_title">美食节></span><span class="item_active_content">该商品参与88元任选5件包邮的，，。。。</span></div><i></i></li>
 						<li class="item_server"><span class="itemserver">服务：</span>
@@ -96,6 +96,7 @@
 	
 </template>
 <script>
+	import eventHub from '../buy.js';
 	import car from '../components/car.vue';
 	export default{
 		components : {car:car},
@@ -126,9 +127,7 @@
 		},
 		methods: {
 			addCart : function(item){
-				item.count = item.count ? item.count+1 : 1;
-				// this.allItems.push(item);
-				console.log(this.cart.data);
+				eventHub.$emit("add",item);
 			}
 		}
 	}
