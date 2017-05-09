@@ -5,8 +5,8 @@
 		</div>
 		<div class="rc-rcType" v-for="items in categoryItemList">
 			<div>
-				{{items.category.name}}
-				{{items.category.frontDesc}}
+				<p class="rc-rcType-title">{{items.category.name}}</p>
+				<p>{{items.category.frontDesc}}</p>
 			</div>
 			<ul class="rc-rcType-ul">
 				<li v-for="x in items.itemList">
@@ -53,7 +53,7 @@
 	}
 	.liBanner{
 		width: 100%;
-		height: 144px;
+		height: 3.35rem;
 		border-bottom: 0.25rem solid #f4f4f4; 
 	}
 	.liBanner img{
@@ -65,12 +65,18 @@
 		width: 100%;
 		border-bottom: 0.25rem solid #f4f4f4;
 	}
-	.rc-rcType>p{
-		height: 60px;
-		line-height: 60px;
+	.rc-rcType>div{
+		height: 1.5rem;
+		line-height: 0.65rem;
+		font-size: 0.275rem;
+		color: #999;
+		text-align: center;
+	}
+	.rc-rcType>div .rc-rcType-title{
 		font-size: 0.4rem;
 		color: #333;
-		text-align: center;
+		line-height: 0.4rem;
+		padding-top: 0.375rem;
 	}
 	.rc-rcType-ul{
 		width: 97%;
@@ -81,9 +87,12 @@
 	}
 	.rc-rcType-ul li{
 		width: 47%;
-		height: 270px;
-		text-indent: 10px;
+		height: 6.75rem;
+		text-indent: 0.25rem;
 		text-align: left;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
 	}
 	.rc-rcType-ul li .rc-rcType-img{
 		height: 75%;
@@ -93,58 +102,49 @@
 	.rc-rcType-ul li .rc-rcType-img span{
 		display: inline-block;
 		position: absolute;
-		font-size: 10px;
-		line-height: 11px;
-		left: 10px;
-		top: 8px;
-		padding: 2px 1px;
-		width: 12px;
+		font-size: 0.25rem;
+		line-height: 0.275rem;
+		left: 0.25rem;
+		top: 0.2rem;
+		padding: 0.125rem 2px;
+		text-indent: 1px;
+		width: 0.3rem;
 		border: 1px solid #b4a078;
 		border-radius: 2px;
 		color: #b4a078;
-		text-indent: 2px;
-		text-align: center;
+		white-space: normal;
 	}
 	.rc-rcType-imgUrl{
-		padding: 9px 10px;
-		width: 150px;
-		margin: 0 auto;
+		padding: 0.225rem 0.25rem;
+		width: 100%;
+		box-sizing: border-box;
 	}
 	.rc-rcType-ul li img{
+		/*background-color: blue;*/
+		margin-left: 0;
 		width: 100%;
 		height: auto;
-		
 	}
 	.rc-rcType-ul li .rc-rcType-img .rc-rcType-img-desc{
 		background-color: #F1ECE2;
 		color: #9F8A60;
-		height: 17%;
-		font-size: 11px;
-		line-height: 30px;
+		height: 16.5%;
+		padding: 0 0.125rem;
+		font-size: 0.275rem;
+		line-height: 0.75rem;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		overflow: hidden;
 	}
 	.rc-rcType-info{
-		font-size: 14px;
-		line-height: 22px;
-		padding-top: 8px;
+		font-size: 0.35rem;
+		line-height: 0.55rem;
+		padding-top: 0.2rem;
+/*		white-space: nowrap;
+		text-overflow: ellipsis;
+		overflow: hidden;*/
 	}
 	.rc-rcType-info .rc-rcType-info-pric{
 		color: #b4282d;
-	}
-	.rc-rcType-last div{
-		height: 75%;
-		background-color: #f4f4f4;
-		font-size: 18px;
-		text-align: center;
-		line-height: 140px;
-		position: relative;
-	}
-	.rc-rcType-last div span{
-		position: absolute;
-		left: 40%;
-		top: 55%;
-		width: 35px;
-		height: 35px;
-		background: url(../assets/rc-rcType-more.png) no-repeat;
-		background-size: cover;
 	}
 </style>

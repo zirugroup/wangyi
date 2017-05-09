@@ -1,6 +1,6 @@
 <template lang="html">
 	<div class="home">
-		<div class="hmHeader">
+		<div class="hmHeader" v-if="$route.path !== '/brand'">
 			<p class="hm-header"><a class="hm-logo"></a><input type="text" class="hm-search" placeholder="商品搜索,共4682款好物"></p>
 			<ul class="hm-nav">
 				<router-link to="/home/hmRecommend" tag="li" class="hm-nav-active">
@@ -9,6 +9,9 @@
 				<router-link to="/home/hmTimeLimit" tag="li" class="hm-li">
 					限时购
 				</router-link>
+				<!-- <router-link to="/home/hmLive" tag="li" class="hm-li">
+					居家
+				</router-link> -->
 				<router-link to="/home/hmLive" tag="li" v-for=" x in headCateList ">
 					{{x.name}}
 				</router-link>
@@ -118,7 +121,7 @@
 		font-size: 0.36rem;
 		padding: 5px 6px;
 	}
-	.hm-nav .hm-nav-active{
+	.router-link-active{
 		color: #b4282d;
 		border-bottom: 2px solid #b4282d;
 	} 

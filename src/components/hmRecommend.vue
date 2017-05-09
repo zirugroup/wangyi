@@ -15,7 +15,8 @@
 			<span v-for="x in policyDescList">{{x.desc}}</span>
 		</div>
 		<div class="rc-prandMarker">
-			<p class="rc-pm-title">品牌制造商直供<span class="rc-pm-icon"></span></p>
+			<router-link to="/brand" class="rc-pm-title" tag="p">品牌制造商直供<span class="rc-pm-icon"></span></router-link>
+			<!-- <p class="rc-pm-title">品牌制造商直供<span class="rc-pm-icon"></span></p> -->
 			<ul class="rc-pm-ul">
 				<li class="rc-pm-brand1">
 					<p><span class="rc-pm-name">CK</span>制造商</p>
@@ -196,7 +197,8 @@
 	.rc-pm-title{
 		color: #666;
 		font-size: 0.36rem;
-		width: 100%;
+		width: 40%;
+		margin-left: 30%;
 		height: 1.25rem;
 		line-height: 1.25rem;
 		text-align: center;
@@ -361,7 +363,7 @@
 		text-overflow: ellipsis;
 	}
 	.rc-hotReco .rcHotReco-desc{
-		font-size: 11px;
+		font-size: 0.275rem;
 	}
 	.rc-hotReco ul li div span{
 		color: #b4282d;
@@ -411,25 +413,25 @@
 	/*专题精选*/
 	.rc-chioce{
 		width: 100%;
-		height: 310px;
+		height: 7.75rem;
 		border-bottom: 0.25rem solid #f4f4f4;
 	}
 	.rc-chioce img{
-		margin: 0 10px;
+		margin: 0 0.25rem;
 		width: 90%;
-		height: 185px;
+		height: 4.625rem;
 	}
 	.rc-chioce div{
-		padding: 15px 0 8px 10px;
-		font-size: 14px;
+		padding: 0.375rem 0 0.2rem 0.25rem;
+		font-size: 0.35rem;
 		font-weight: bold;
 	}
 	.rc-chioce div span{
 		color: #b4282d;
-		margin-left: 8px;
+		margin-left: 0.2rem;
 	}
 	.rc-chioce div .rc-chioce-info{
-		font-size: 11px;
+		font-size: 0.275rem;
 		font-weight: normal;
 		color: #999;
 	}
@@ -439,8 +441,8 @@
 		border-bottom: 0.25rem solid #f4f4f4;
 	}
 	.rc-rcType>p{
-		height: 60px;
-		line-height: 60px;
+		height: 1.5rem;
+		line-height: 1.5rem;
 		font-size: 0.4rem;
 		color: #333;
 		text-align: center;
@@ -454,8 +456,8 @@
 	}
 	.rc-rcType-ul li{
 		width: 47%;
-		height: 270px;
-		text-indent: 10px;
+		height: 6.75rem;
+		text-indent: 0.25rem;
 		text-align: left;
 	}
 	.rc-rcType-ul li .rc-rcType-img{
@@ -466,12 +468,12 @@
 	.rc-rcType-ul li .rc-rcType-img span{
 		display: inline-block;
 		position: absolute;
-		font-size: 10px;
-		line-height: 11px;
-		left: 10px;
-		top: 8px;
+		font-size: 0.25rem;
+		line-height: 0.275rem;
+		left: 0.25rem;
+		top: 0.2rem;
 		padding: 2px 1px;
-		width: 12px;
+		width: 0.3rem;
 		border: 1px solid #b4a078;
 		border-radius: 2px;
 		color: #b4a078;
@@ -479,8 +481,8 @@
 		text-align: center;
 	}
 	.rc-rcType-imgUrl{
-		padding: 9px 10px;
-		width: 150px;
+		padding: 0.225rem 0.25rem;
+		width: 3.75rem;
 		margin: 0 auto;
 	}
 	.rc-rcType-ul li img{
@@ -492,13 +494,13 @@
 		background-color: #F1ECE2;
 		color: #9F8A60;
 		height: 17%;
-		font-size: 11px;
-		line-height: 30px;
+		font-size: 0.275rem;
+		line-height: 0.75rem;
 	}
 	.rc-rcType-info{
-		font-size: 14px;
-		line-height: 22px;
-		padding-top: 8px;
+		font-size: 0.35rem;
+		line-height: 0.55rem;
+		padding-top: 0.2rem;
 	}
 	.rc-rcType-info .rc-rcType-info-pric{
 		color: #b4282d;
@@ -506,17 +508,17 @@
 	.rc-rcType-last div{
 		height: 75%;
 		background-color: #f4f4f4;
-		font-size: 18px;
+		font-size: 0.45rem;
 		text-align: center;
-		line-height: 140px;
+		line-height: 3.5rem;
 		position: relative;
 	}
 	.rc-rcType-last div span{
 		position: absolute;
 		left: 40%;
 		top: 55%;
-		width: 35px;
-		height: 35px;
+		width: 0.875rem;
+		height: 0.875rem;
 		background: url(../assets/rc-rcType-more.png) no-repeat;
 		background-size: cover;
 	}
