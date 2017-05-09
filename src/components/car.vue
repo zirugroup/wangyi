@@ -45,7 +45,7 @@
 			</div>
 		</div>
 		<div class="car_like">
-			<p>猜你喜欢</p>			
+			<p>猜你喜欢</p>
 			<div class="likeItems">
 				<router-link v-for="(x,key) in carlike" :key="x.id" :to="{path:'/item',query:{object:x}}">
 					<dl>
