@@ -50,8 +50,14 @@
     export default{
         data(){
             return{
-                res : "",
+                res : [],
+                ind : []
             }
+        },
+        attached : function(){
+            console.log($(".contains").eq(0));
+             $(".contains").eq(0).css("display","block");
+            $("#list_count li span").eq(0).attr("class","changeColor")
         },
         mounted(){
             var that=this;
@@ -72,6 +78,13 @@
                 $(".contains").eq(a).css("display","block");
                 $("#list_count li span").eq(a).attr("class","changeColor")
             }
+        },
+        created : function(){
+            // this.ind = this.$route.query.index;
+            // console.log(this.$route.query);
+            console.log(this.ind);
+            //  $(".contains").eq(0).css("display","block");
+            // $("#list_count li span").eq(0).attr("class","changeColor")
         }
     }
 </script>
