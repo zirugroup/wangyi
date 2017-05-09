@@ -27,7 +27,7 @@ Vue.use(VueResource)
 			    swiper : true,//滑动条是否有动画  默认true
 			    tipsPosition: "bottom",//滑动条出现的位置  默认top 接受bottom
 			    callback: function(index, str) { //触发选项卡时的事件，传回该元素的index值，从0开始，及该元素的文本内容
-			        console.log(index, str)
+			      //  console.log(index, str)
 			    }
 			});
 		}
