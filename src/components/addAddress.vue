@@ -26,7 +26,7 @@ var a =0;
 import Vue from "vue"
 export default{
 	data (){
-		return {name : ""};
+		return {name : "abc"};
 	},
 	methods : {
 		addAddr : function(){
@@ -39,7 +39,22 @@ export default{
 			}
 		},
 		writeAdd : function(){
-			$(".manageAddrMain").html(name)
+			$(".manageAddrMain").html(`
+				<ul class="line"></ul>
+				<div class="addressAdd">
+					<div class="addressSh">
+						<div class="addressEdit">
+							<span>d</span>
+							<span>12121222</span>
+						</div>
+						<div class="addressBeijing">
+							<span>默认</span>
+							<span>北京市</span>
+						</div>
+					</div>
+					<div class="addressEd">编辑</div>
+				</div>
+				`)
 		}
 	}
 }
@@ -48,6 +63,47 @@ export default{
 
 <style lang="css">
 html {font-size:40px;}
+.line{
+    display: block;
+    width: 100%;
+    height: .1rem;
+    background: url(//yanxuan.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/icon-normal/address-bg-bd30f2bfeb.png) repeat-x;
+    background-size: .8rem .13333rem;
+}
+.addressAdd{
+	height:15rem;
+	background: #eee;
+	display: flex;
+}
+.addressSh{
+	width:75%;
+	height:1.8rem;
+	background: #fff;
+	padding:0.3rem 0 0 0;
+}
+.addressEdit span:nth-of-type(1){
+	padding:0 1.3rem 0.1rem 0.5rem;
+	display: inline-block;
+	margin-bottom: 0.1rem;
+	font-size: 0.4rem;
+}
+.addressBeijing span:nth-of-type(1){
+	margin:0 0.6rem 0 0.5rem;
+	color:#842323;
+	border: 1px solid #842323;
+	padding:0 0.1rem;
+	font-family: "微软雅黑";
+	font-size: 0.3rem;
+}
+.addressEd{
+	width:25%;
+	height:2.1rem;
+	background: #fff;
+	text-align: right;
+	padding-right: 0.4rem;
+	line-height: 2.1rem;
+	font-size: 0.4rem;
+}
 .isShow{
 	display: none;
 }

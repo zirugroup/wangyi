@@ -47,7 +47,7 @@ export default{
 	},
 	mounted (){
 		this.$http.get("../../static/json/new_product.json").then(function(res){
-			console.log(res)
+			// console.log(res)
 			this.newOne = res.body.newItemAds;
 			this.newPro = res.body.newItems.itemList;
 		})
