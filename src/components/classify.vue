@@ -1,6 +1,5 @@
 <template lang="html">
 	<div>
-		<!-- <router-link to="/classifyItems">分类具体</router-link> -->
 		<div class="classify">
 	        <div class="search">
                 <div class="search_input">
@@ -21,7 +20,7 @@
                 <div class="down_contains">
                     <div class="contains" v-for="toolbar in res">
                         <div class="contains_back" :style="'background-image:url('+toolbar.imgUrl+');'">
-                            <div class="contains_word"> 
+                            <div class="contains_word">
                                 热卖好物，诚意推荐
                             </div>
                         </div>
@@ -29,8 +28,12 @@
                             <span>{{toolbar.name}}分类</span>
                         </div>
                         <div  class="contains_goods">
-                            <ul class="contains_goods_each"  >
-                                <li v-for="x in toolbar.subCateList" :style="'background-image:url('+x.wapBannerUrl+')'">{{x.name}}</li>
+                            <ul class="contains_goods_each">
+                                <li v-for="(x,i) in toolbar.subCateList" :style="'background-image:url('+x.wapBannerUrl+')'">
+                                    <router-link :to="{path:'/classifyItems',query: {index : i , class : x.superCategoryId ,item : x.id}}">
+                                        {{x.name}}
+                                    </router-link>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -64,7 +67,6 @@
         },
         methods : {
             change : function(a){
-                console.log(a);
                 $(".contains").css("display","none");
                 $("#list_count li span").attr("class","list_left");
                 $(".contains").eq(a).css("display","block");
