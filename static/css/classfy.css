@@ -1,0 +1,143 @@
+html {
+  font-size: 24px; }
+
+body {
+  padding: 0;
+  margin: 0; }
+
+.classify .search {
+  height: 1.4rem;
+  width: 100%;
+  padding: 0.3rem;
+  box-sizing: border-box;
+  background: #fff;
+  border-bottom: 1px solid #ccc; }
+  .classify .search .search_input {
+    height: 0.8rem;
+    padding-top: 0.2rem;
+    box-sizing: border-box;
+    width: 100%;
+    background: #ededed;
+    border-radius: 0.1rem; }
+.classify .down {
+  padding-bottom: 1.3rem; }
+  .classify .down .down_toolbar {
+    width: 20%;
+    position: absolute;
+    top: 1.4rem;
+    left: 0; }
+    .classify .down .down_toolbar li {
+      padding-top: 0.5rem;
+      position: relative; }
+      .classify .down .down_toolbar li .list_left {
+        height: 0.6rem;
+        width: 100%;
+        text-align: center;
+        line-height: 0.6rem;
+        display: inline-block;
+        color: #333;
+        font-size: 0.37rem; }
+      .classify .down .down_toolbar li .changeColor {
+        height: 0.6rem;
+        text-align: center;
+        width: 100%;
+        font-size: 0.48rem;
+        line-height: 0.6rem;
+        display: inline-block;
+        color: #ab2b2b; }
+        .classify .down .down_toolbar li .changeColor:after {
+          height: 0.6rem;
+          width: 0.08rem;
+          background-color: #ab2b2b;
+          display: inline-block;
+          content: '';
+          position: absolute;
+          left: 0;
+          bottom: 0; }
+  .classify .down .down_contains {
+    overflow-y: auto;
+    overflow-x: hidden;
+    border-left: 1px solid #ccc;
+    width: 80%;
+    right: 0;
+    top: 1.4rem;
+    position: absolute;
+    box-sizing: border-box;
+    height: 14rem;
+    padding: 0.4rem 0.4rem 0.28rem 0.4rem; }
+    .classify .down .down_contains .contains_back {
+      height: 2.56rem;
+      width: 100%;
+      background-image: "";
+      background-position: center;
+      background-repeat: no-repeat;
+      background-color: #ccc;
+      background-size: cover;
+      border-width: "";
+      border-style: "";
+      border-color: "";
+      border-radius: 4px; }
+      .classify .down .down_contains .contains_back .contains_word {
+        display: inline-block;
+        vertical-align: middle;
+        padding-top: 1rem;
+        text-align: center;
+        font-size: .37333rem;
+        color: #fff;
+        line-height: 1.5;
+        width: 100%; }
+    .classify .down .down_contains .contains_class {
+      height: 1.44rem;
+      width: 100%;
+      line-height: 1.44rem;
+      text-align: center;
+      font-size: .32rem;
+      color: #333; }
+      .classify .down .down_contains .contains_class span {
+        position: relative; }
+        .classify .down .down_contains .contains_class span:after {
+          right: -.74667rem;
+          position: absolute;
+          content: '';
+          top: 0;
+          bottom: 0;
+          margin: auto;
+          height: 1px;
+          width: .53333rem;
+          background-color: #d9d9d9;
+          -webkit-transform-origin: 50% 100% 0;
+          transform-origin: 50% 100% 0; }
+        .classify .down .down_contains .contains_class span:before {
+          left: -.74667rem;
+          position: absolute;
+          content: '';
+          top: 0;
+          bottom: 0;
+          margin: auto;
+          height: 1px;
+          width: .53333rem;
+          background-color: #d9d9d9;
+          -webkit-transform-origin: 50% 100% 0;
+          transform-origin: 50% 100% 0; }
+    .classify .down .down_contains .contains_goods {
+      box-sizing: border-box; }
+      .classify .down .down_contains .contains_goods .contains_goods_each:after {
+        content: "";
+        display: block;
+        clear: both; }
+      .classify .down .down_contains .contains_goods .contains_goods_each li {
+        width: 33.3%;
+        margin: 0;
+        padding-top: 1.92rem;
+        float: left;
+        line-height: 0.6rem;
+        display: block;
+        height: 0.6rem;
+        text-align: center;
+        background-image: "";
+        background-position: top center;
+        background-repeat: no-repeat;
+        background-color: "";
+        background-size: auto 1.92rem; }
+
+/*# sourceMappingURL=classfy.css.map */
