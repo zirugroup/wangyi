@@ -1,0 +1,134 @@
+{
+  "code": "200",
+  "dataUp": {
+    "flashSaleId": 1041001,
+    "screenId": 1041005,
+    "leftTime": 0,
+    "currentTime": 1494338754281,
+    "screenList": [
+      {
+        "id": 1041004,
+        "startTime": 1494295200000,
+        "status": 0
+      },
+      {
+        "id": 1041005,
+        "startTime": 1494309600000,
+        "status": 0
+      },
+      {
+        "id": 1041006,
+        "startTime": 1494324000000,
+        "status": 0
+      },
+      {
+        "id": 1041007,
+        "startTime": 1494338400000,
+        "status": 1
+      },
+      {
+        "id": 1041008,
+        "startTime": 1494381600000,
+        "status": 2
+      },
+      {
+        "id": 1041009,
+        "startTime": 1494396000000,
+        "status": 2
+      },
+      {
+        "id": 1041010,
+        "startTime": 1494410400000,
+        "status": 2
+      },
+      {
+        "id": 1041011,
+        "startTime": 1494424800000,
+        "status": 2
+      }
+    ],
+    "itemList": [
+      {
+        "itemId": 1030002,
+        "itemName": "160*230羊毛圈绒枪刺地毯",
+        "primaryPicUrl": "http://yanxuan.nosdn.127.net/0d0a7e7d40a16ae6850d19f5e8704d8e.jpg",
+        "listPicUrl": "http://yanxuan.nosdn.127.net/8b9328496990357033d4259fda250679.png",
+        "simpleDesc": "印度进口，手工枪刺，简约百搭",
+        "retailPrice": 1269,
+        "actualPrice": 899,
+        "totalSellVolume": 200,
+        "currentSellVolume": 184,
+        "valid": true
+      },
+      {
+        "itemId": 1059000,
+        "itemName": "抗菌防臭四季抽条男袜",
+        "primaryPicUrl": "http://yanxuan.nosdn.127.net/ee45b21bef3b4e2e2ec9c60063bf126e.jpg",
+        "listPicUrl": "http://yanxuan.nosdn.127.net/0fe1f1381432ef3de063ed7cedee8a90.png",
+        "simpleDesc": "优衣库制造商，进口抗菌纱",
+        "retailPrice": 59,
+        "actualPrice": 39,
+        "totalSellVolume": 500,
+        "currentSellVolume": 235,
+        "valid": true
+      },
+      {
+        "itemId": 1009025,
+        "itemName": "纯棉中空纱浴巾",
+        "primaryPicUrl": "http://yanxuan.nosdn.127.net/339968ecaa40bb42ff6dbe7327f4c45d.jpg",
+        "listPicUrl": "http://yanxuan.nosdn.127.net/261c02e5f2387ab9693e070f1cd4425d.png",
+        "simpleDesc": "透气舒适中空纱",
+        "retailPrice": 79,
+        "actualPrice": 59,
+        "totalSellVolume": 500,
+        "currentSellVolume": 290,
+        "valid": true
+      },
+      {
+        "itemId": 1126005,
+        "itemName": "PP翻盖式双格收纳鞋盒",
+        "primaryPicUrl": "http://yanxuan.nosdn.127.net/f3b7a551beb97a39af438e5ab681bd04.png",
+        "listPicUrl": "http://yanxuan.nosdn.127.net/f4c9c7b6183eb8aedc845b690091d956.png",
+        "simpleDesc": "双格收纳，成双成对",
+        "retailPrice": 149,
+        "actualPrice": 126,
+        "totalSellVolume": 400,
+        "currentSellVolume": 380,
+        "valid": true
+      }
+    ],
+    "wapBannerPic": null,
+    "showCateSale": false
+  },
+  "dataDown": [
+    {
+      "name": "三石福利价",
+      "itemList": [
+        {
+          "itemId": 1114011,
+          "itemName": "104升 纯PC拉链斜纹拉杆箱",
+          "primaryPicUrl": "http://yanxuan.nosdn.127.net/7e622b47c4d28dc5e7f97be57ba17b84.png",
+          "listPicUrl": "http://yanxuan.nosdn.127.net/196b5ce11930b4eadaec563cb0406634.png",
+          "simpleDesc": "104升的体积，90升的价格",
+          "retailPrice": 369,
+          "actualPrice": 299,
+          "totalSellVolume": 23471,
+          "currentSellVolume": 21577,
+          "valid": true
+        },
+        {
+          "itemId": 1086052,
+          "itemName": "20寸 铝镁合金登机箱",
+          "primaryPicUrl": "http://yanxuan.nosdn.127.net/879dde68b149091ed832980a5388304a.png",
+          "listPicUrl": "http://yanxuan.nosdn.127.net/93171a281c4ed272c007a050816e6f6c.png",
+          "simpleDesc": "时尚金属箱，奢品质感",
+          "retailPrice": 1499,
+          "actualPrice": 859,
+          "totalSellVolume": 1423,
+          "currentSellVolume": 1162,
+          "valid": true
+        }
+      ]
+    }
+  ]
+}

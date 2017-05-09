@@ -130,7 +130,7 @@
 		},
 		mounted() {
 			// 推荐的项目
-			this.$http.get("../static/recommend.json").then(
+			this.$http.get("../static/json/recommend.json").then(
 				function(res){
 					console.log(res.body);
 					this.focusList = res.body.focusList;//轮播图数据，不能使用
@@ -165,7 +165,7 @@
 	}
 	.swiper-container img{
 		width: 100%;
-		height: 4.5rem;
+		height: 5.4rem;
 	}
 	/*推荐页*/
 	.rc-banner-info{

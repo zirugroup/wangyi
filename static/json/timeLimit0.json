@@ -1,0 +1,134 @@
+{
+  "code": "200",
+  "dataUp": {
+    "flashSaleId": 1041001,
+    "screenId": 1041004,
+    "leftTime": 0,
+    "currentTime": 1494338576386,
+    "screenList": [
+      {
+        "id": 1041004,
+        "startTime": 1494295200000,
+        "status": 0
+      },
+      {
+        "id": 1041005,
+        "startTime": 1494309600000,
+        "status": 0
+      },
+      {
+        "id": 1041006,
+        "startTime": 1494324000000,
+        "status": 0
+      },
+      {
+        "id": 1041007,
+        "startTime": 1494338400000,
+        "status": 1
+      },
+      {
+        "id": 1041008,
+        "startTime": 1494381600000,
+        "status": 2
+      },
+      {
+        "id": 1041009,
+        "startTime": 1494396000000,
+        "status": 2
+      },
+      {
+        "id": 1041010,
+        "startTime": 1494410400000,
+        "status": 2
+      },
+      {
+        "id": 1041011,
+        "startTime": 1494424800000,
+        "status": 2
+      }
+    ],
+    "itemList": [
+      {
+        "itemId": 1109009,
+        "itemName": "玉琢龙泉青瓷餐具 9头",
+        "primaryPicUrl": "http://yanxuan.nosdn.127.net/d30ea01df572358c8edff8cc59a1762b.png",
+        "listPicUrl": "http://yanxuan.nosdn.127.net/c1dd1e8b11a13feb3d4663c12d3a462e.png",
+        "simpleDesc": "薄胎厚釉，葱翠如玉",
+        "retailPrice": 499,
+        "actualPrice": 389,
+        "totalSellVolume": 250,
+        "currentSellVolume": 234,
+        "valid": true
+      },
+      {
+        "itemId": 1079013,
+        "itemName": "Paris名媛休闲裤",
+        "primaryPicUrl": "http://yanxuan.nosdn.127.net/1a8749431e14b94211141627762caa73.png",
+        "listPicUrl": "http://yanxuan.nosdn.127.net/0c6f8ccbae55f81ab568493dc07ed06d.png",
+        "simpleDesc": "双面织造，充实温暖",
+        "retailPrice": 99,
+        "actualPrice": 79,
+        "totalSellVolume": 600,
+        "currentSellVolume": 382,
+        "valid": true
+      },
+      {
+        "itemId": 1097019,
+        "itemName": "面包树的糖香氛喷雾",
+        "primaryPicUrl": "http://yanxuan.nosdn.127.net/bd1f18a81e7181755e194fe4d2eb7647.png",
+        "listPicUrl": "http://yanxuan.nosdn.127.net/ea9525d8e60f2761dd526785ff8146bb.png",
+        "simpleDesc": "香奈儿原料供应商，椰香",
+        "retailPrice": 79,
+        "actualPrice": 59,
+        "totalSellVolume": 400,
+        "currentSellVolume": 312,
+        "valid": true
+      },
+      {
+        "itemId": 1064004,
+        "itemName": "方形封闭式宠物窝",
+        "primaryPicUrl": "http://yanxuan.nosdn.127.net/09bcb1482b8b51920bda67638e7249e8.jpg",
+        "listPicUrl": "http://yanxuan.nosdn.127.net/337da7094c1df295ca0f0b8baa55b2d5.png",
+        "simpleDesc": "封闭式设计猫咪独享",
+        "retailPrice": 99,
+        "actualPrice": 69,
+        "totalSellVolume": 200,
+        "currentSellVolume": 181,
+        "valid": true
+      }
+    ],
+    "wapBannerPic": null,
+    "showCateSale": false
+  },
+  "dataDown": [
+    {
+      "name": "三石福利价",
+      "itemList": [
+        {
+          "itemId": 1114011,
+          "itemName": "104升 纯PC拉链斜纹拉杆箱",
+          "primaryPicUrl": "http://yanxuan.nosdn.127.net/7e622b47c4d28dc5e7f97be57ba17b84.png",
+          "listPicUrl": "http://yanxuan.nosdn.127.net/196b5ce11930b4eadaec563cb0406634.png",
+          "simpleDesc": "104升的体积，90升的价格",
+          "retailPrice": 369,
+          "actualPrice": 299,
+          "totalSellVolume": 23471,
+          "currentSellVolume": 21577,
+          "valid": true
+        },
+        {
+          "itemId": 1086052,
+          "itemName": "20寸 铝镁合金登机箱",
+          "primaryPicUrl": "http://yanxuan.nosdn.127.net/879dde68b149091ed832980a5388304a.png",
+          "listPicUrl": "http://yanxuan.nosdn.127.net/93171a281c4ed272c007a050816e6f6c.png",
+          "simpleDesc": "时尚金属箱，奢品质感",
+          "retailPrice": 1499,
+          "actualPrice": 859,
+          "totalSellVolume": 1423,
+          "currentSellVolume": 1162,
+          "valid": true
+        }
+      ]
+    }
+  ]
+}

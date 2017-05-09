@@ -1,7 +1,10 @@
 <template lang="html">
 	<div class="home">
 		<div class="hmHeader" v-if="$route.path !== '/brand'">
-			<p class="hm-header"><a class="hm-logo"></a><input type="text" class="hm-search" placeholder="商品搜索,共4682款好物"></p>
+			<div class="hm-header">
+				<a class="hm-logo"></a>
+				<input type="text" class="hm-search" placeholder="商品搜索,共4682款好物">
+			</div>
 			<ul class="hm-nav">
 				<router-link to="/home/hmRecommend" tag="li" class="hm-nav-active">
 					推荐
@@ -9,15 +12,11 @@
 				<router-link to="/home/hmTimeLimit" tag="li" class="hm-li" >
 					限时购
 				</router-link>
-				<!-- <router-link to="/home/hmLive" tag="li" class="hm-li">
-					居家
-				</router-link> -->
-				<!-- <router-link to="/home/hmLive" tag="li" v-for=" (x, index) in headCateList" :data-index="index" v-on:click="onclick($event, index)">
-					{{x.name}} -->
-					<router-link v-for="(x, index) in headCateList" tag="li" :key="x.id" :to="{path: '/home/hmLive', query:{categoryId: x.id}}" exact>
+					<router-link v-for="x in headCateList" tag="li" :key="x.id" :to="{path: '/home/hmLive', query:{categoryId: x.id}}" exact>
 						{{x.name}}
-					</router-link>
+				</router-link>
 			</ul>
+
 		</div>
 		<router-view></router-view>
 	</div>
@@ -34,17 +33,13 @@
 		},
 		mounted() {
 			// 推荐的项目
-			this.$http.get("../static/recommend.json").then(
+			this.$http.get("../static/json/recommend.json").then(
 				function(res){
 					console.log(res.body);
 					this.headCateList = res.body.headCateList;//nav
+					console.log(this.headCateList)
 			});
-		},
-		methods: {
-			onclick: function(event, index){
-				console.log(1);
-			}
-		}	
+		}
 	}
 </script>
 <style lang="css">
@@ -61,6 +56,7 @@
 		font-family: PingFangSC-Light, helvetica, "Heiti SC";
 	}
 	.hmHeader{
+		width: 100%;
 		position: fixed;
 		top: 0;
 		background-color: #fff;
@@ -68,38 +64,36 @@
 	}
 	.hm-header{
 		width: 100%;
-		height: 1rem;
-		padding: 0.2rem 0.4rem;
+		height: 0.82rem;
 		color: #666;
 		box-sizing: border-box;
 	}
 	.hm-header .hm-logo{
-		display: inline-block;
-		vertical-align: middle;
-		width: 1.7rem;
+		float: left;
+		width: 19%;
 		height: 0.5rem;
-		margin-right: 0.25rem;
-		background: url("http://yanxuan.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/icon-normal/indexLogo-11d65342f9.png");
-		background-size: cover;
+		margin: 2% 0 0 5%;
+		background: url("../assets/hmlogo.png") no-repeat;
+		background-size: 100%;
+		/*此处若使用 background-size: cover; 则在缩小屏幕时背景图不能全部显示*/
 	}
 	.hm-header .hm-search{
-		display: inline-block;
-		vertical-align: middle;
-		width: 6.6rem;
-		height: 0.7rem;
-		text-indent: 1.75rem;
+		float: right;
+		width: 68%;
+		margin: 1% 4% 0 0;
+		height: 0.66rem;
+		text-indent: 24%;
 		line-height: 0.75rem;
 		border: none;
 		border-radius: 5px;
-		font-size: 0.38rem;
-		font-weight: 500;
-		background: #ededed url(//yanxuan.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/icon-normal/search2-2fb94833aa.png) no-repeat 1.125rem center;
-		background-size: 0.46rem auto;
+		font-size: 0.35rem;
+		background: #ededed url("../assets/hmSearch.png") no-repeat 18% center;
+		background-size: 0.36rem auto;
 	}
 	/*nav部分*/
 	.hm-nav{
-		width: 90%;
-		padding-left: 0.375rem;
+		width: 94%;
+		padding: 0 3%;
 		height: 0.875rem;
 		font-size: 0;
 		margin-top: 0.125rem;	

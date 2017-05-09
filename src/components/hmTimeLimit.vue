@@ -1,5 +1,12 @@
 <template lang="html">
-	<h1>限时抢购</h1>
+	<div class="timeLimitHtml">
+		<div class="tlLogo">
+			<img src="../assets/timeLimitBanner.jpg">
+		</div>
+		<ul class="tlTime">
+			<li v-for="x in "></li>
+		</ul>
+	</div>
 </template>
 <script>
 	import Vue from "vue"

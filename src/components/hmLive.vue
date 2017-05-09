@@ -42,7 +42,7 @@
 		},
 		methods: {
 			getData: function(para){
-				this.$http.get("../static/"+para+".json").then(
+				this.$http.get("../static/json/"+para+".json").then(
 					function(res){
 						this.categoryItemList = res.body.categoryItemList;
 						this.currentCategory = res.body.currentCategory;

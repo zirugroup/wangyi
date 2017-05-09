@@ -35,7 +35,7 @@
 		},
 		mounted() {
 			// 推荐的项目
-			this.$http.get("../static/recommend.json").then(
+			this.$http.get("../static/json/recommend.json").then(
 				function(res){
 					console.log(res.body);
 					this.tagLis = res.body.tagList;
