@@ -2,9 +2,25 @@
 	<div>
 		<h1>分类</h1>
 		<router-link to="/classifyItems">分类具体</router-link>
-		 <div>
-	        <div class="id">{{}}</div>
-	        <div class="id">{{}}</div>
+		 <div v-for="toobar in res">
+	        <div class="search">
+                <div>
+                    <span>商品搜索，共</span>
+                    <span>4000</span>
+                    <span>件商品</span>
+                </div>
+            </div>
+            <div class="toolbar" >
+                <ul>
+                    <li>{{toobar.name}}</li>
+                </ul>
+            </div>
+            <div class="contains" >
+                <img :src=toobar.bannerUIrl >
+                <div :style="'background:url('+toobar.bannerUrl+');height : 30px;width : 100px'">
+                    
+                </div>
+            </div>
 	    </div>
 	</div>
 </template>
@@ -16,18 +32,19 @@
     export default{
         data(){
             return{
-                ret:'',
-                data:''
+                res : "",
             }
         },
         mounted(){
             var that=this;
+            var res;
             $.ajax({
                 type:"get",
                 url : "../../static/json/classfy.json",
                 dataType:"json",
                 success:function(data){
                     console.log(data);
+                    that.res = data;
                 }
             })
         }

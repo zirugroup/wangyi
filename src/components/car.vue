@@ -1,6 +1,5 @@
 <template lang="html">
 	<div class="car">
-		<router-link to="item">单品</router-link>
 		<div class="car_header">
 			<div class="car_title">购物车</div>
 			<ul>
@@ -9,19 +8,22 @@
 				<li><span></span>满88元免邮费</li>
 			</ul>
 		</div>
-		<div class="car_empty">
+		<div class="car_empty" v-if='!isEmpty()'>
 			<div class="empty_car"></div>
 			<p>去添点什么吧{{address}}</p>
 		</div>
 		<div class="car_like">
 			<p>猜你喜欢</p>			
 			<div class="likeItems">
-				<dl  v-for="x in carlike">
-					<dt><img :src="x.listPicUrl"></dt>
-					<dd class="likeItems_news">{{x.simpleDesc}}</dd>
-					<dd class="likeItems_name">{{x.name}}</dd>
-					<dd class="likeItems_price">￥{{x.retailPrice}}</dd>
-				</dl>
+				<router-link v-for="(x,key) in carlike" :key="x.id" :to="{path:'/item',query:{object:x}}">
+					<dl>
+						<dt><img :src="x.listPicUrl"></dt>
+						<dd class="likeItems_news">{{x.simpleDesc}}</dd>
+						<dd class="likeItems_name">{{x.name}}</dd>
+						<dd class="likeItems_price">￥{{x.retailPrice}}</dd>
+					</dl>
+					<div class="car_clear"></div>
+				</router-link>
 				<div class="car_clear"></div>
 			</div>
 		</div>
@@ -37,7 +39,8 @@
 		data (){
 			return {
 				address : "aaaa",
-				carlike : []
+				carlike : [],
+				allItems : ['a']
 			}
 		},
 		mounted (){
@@ -48,9 +51,13 @@
                 dataType:"json",
                 success:function(res){
                     vm.carlike = res.data.items;
-                    console.log(res.data.items)
                 }
             })
+		},
+		methods : {
+			isEmpty: function(){
+				return this.allItems.length>0;
+			}
 		}
 	}
 </script>
@@ -120,13 +127,13 @@
 		line-height: 1.5rem;
 		text-align: center;
 	}
-	.likeItems dl{
+	.likeItems a{
 		background-color: #F4F4F4;
 		float: left;
 		width: 49%;
 		margin-bottom: 0.4rem;
 	}
-	.likeItems dl:nth-of-type(even){
+	.likeItems a:nth-of-type(even){
 		float: right;
 	}
 	.likeItems dl img{
