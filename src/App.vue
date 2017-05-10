@@ -4,7 +4,7 @@
     <footer v-if =" $route.path == '/home' || $route.path == '/car' || $route.path == '/topic' || $route.path == '/classify' || $route.path == '/mine' ">
       <router-link class="index_home" to="/home" active-class="active_index_home"><span>首页</span></router-link>
       <router-link class="index_topic" to="/topic" active-class="active_index_topic"><span>专题</span></router-link>
-      <router-link class="index_classify" to="/classify" active-class="active_index_classify"><span>分类</span></router-link>
+      <router-link class="index_classify" :to="{path : '/classify' ,query :{class : '居家',index : '0'}}"  active-class="active_index_classify"><span>分类</span></router-link>
       <router-link class="index_car" to="/car" active-class="active_index_car"><span>购物车</span><span class="footer_num" v-show="item_num>0">{{item_num}}</span></router-link>
       <router-link class="index_mine" to="/mine" active-class="active_index_mine"><span>个人</span></router-link>
     </footer>
@@ -17,8 +17,21 @@
         name: 'app',
         data (){
           return {
-            item_num:0
+            item_num:0,
+            class1 : []
           }
+        },
+        mounted(){
+            var that=this;
+            $.ajax({
+                type:"get",
+                url : "../../static/json/classfy.json",
+                dataType:"json",
+                success:function(data){
+                    that.res = data;
+                    that.class1 = that.res[0].name;
+                }
+            });
         },
         created(){
           this.item_num = eventHub.allcount;

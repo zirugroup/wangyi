@@ -44,6 +44,8 @@
 				</div>
 			</div>
 		</div>
+
+
 		<div class="car_like">
 			<p>猜你喜欢</p>
 			<div class="likeItems">
@@ -58,7 +60,10 @@
 				</router-link>
 				<div class="car_clear"></div>
 			</div>
-		</div>	
+		</div>
+
+
+
 		<div class="car_footer" v-show='!ismod'>
 			<div class="car_all">
 				<div class="car_selectall"></div>
@@ -359,6 +364,9 @@
 		text-indent: 10px;
 	}
 	.likeItems_news{
+		white-space: nowrap;
+		overflow:hidden;
+		text-overflow:ellipsis;
 		background-color: #F1ECE2;
 		color: #9F8A60;
 		font-size: 0.3rem;

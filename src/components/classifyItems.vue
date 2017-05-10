@@ -1,26 +1,35 @@
 <template lang="html">
-	<div>
-		<!-- <router-link to="/item">单品</router-link> -->
-		<div>
-			<div class="data-reactid" v-for="item in listCmputed">
-				<div v-for="(x,i) in item.subCateList">
-                     <router-link :to="{path:'/classifyItems',query: {index : i , class : x.superCategoryId ,item : x.id}}">
-                        {{x.name}}
-                    </router-link>
-				</div>
-			</div>
-			<div v-for="item in listCmputed">
-				<div v-for="x in item.subCateList">
-					{{x.frontName}}
-				</div>
+	<div class="classifyItem">
+        <ul class="hm-nav" v-for="item in listCmputed">
+            <li v-for="(x,i) in item.subCateList">
+                <router-link  :to="{path:'/classifyItems',query: {index : i , class : x.superCategoryId ,item : x.id}}">
+                    {{x.name}}
+                </router-link>
+            </li>
+        </ul>
+		<div class="data_discribe">
+            <p class="data_back"></p>
+			<p class="data_discribe_contains">
+				{{lihaiData1}}
+			</p>
+        </div>
+        <div class="car_like">
+            <div class="likeItems" >
+                <router-link :to="{path:'/item',query:{object:item}}" v-for="item in lihaiData">
+                    <dl>
+                        <dt><img :src="item.listPicUrl"></dt>
+                        <dd class="likeItems_news">{{item.simpleDesc}}</dd>
+                        <dd class="likeItems_name">{{item.name}}</dd>
+                        <dd class="likeItems_price">￥{{item.retailPrice}}</dd>
+                    </dl>
+                    <div class="car_clear"></div>
+                </router-link>
+                <div class="car_clear"></div>
             </div>
-            <div v-for="item in lihaiData">
-                <img :src="item.listPicUrl">
-				<div>{{item.name}}</div>
-				<div>{{item.simpleDesc}}</div>
-                <div>￥{{item.retailPrice}}</div>
-			</div>
-		</div>
+        </div>
+
+
+
 	</div>
 </template>
 <script>
@@ -40,7 +49,8 @@
                 index_last :  [],
                 mingxi : [],
                 lihaiData : [],
-                classify : []
+                classify : [],
+                lihaiData1 : []
             }
         },
         computed :{
@@ -64,6 +74,8 @@
                         that.mingxi.filter(function(item){
                             if(item.category.id == that.item_last){
                                 that.lihaiData = item.itemList;
+                                that.lihaiData1 = item.category.frontName;
+                                console.log(that.lihaiData1)
                             }
                         })
                     }
