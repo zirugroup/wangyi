@@ -11,7 +11,7 @@
             </div>
             <div class="down">
                 <div class="down_toolbar">
-                    <ul id="list_count">
+                    <ul id="list_count ">
                         <li  v-for="(toolbar,i) in res">
                             <router-link :to="{path : '/classify' ,query :{class : toolbar.name,index : i}}" exact class="list_left" active-class="changeColor">
                                 {{toolbar.name}}
@@ -31,11 +31,11 @@
                         </div>
                         <div  class="contains_goods">
                             <ul class="contains_goods_each">
-                                <li v-for="(x,i) in item.subCateList" :style="'background-image:url('+x.wapBannerUrl+')'">
-                                    <router-link :to="{path:'/classifyItems',query: {index : i , class : x.superCategoryId ,item : x.id}}">
+                                <router-link v-for="(x,i) in item.subCateList" :to="{path:'/classifyItems',query: {index : i , class : x.superCategoryId ,item : x.id}}">
+                                    <li :style="'background-image:url('+x.wapBannerUrl+')'">
                                         {{x.name}}
-                                    </router-link>
-                                </li>
+                                    </li>
+                                </router-link>
                             </ul>
                         </div>
                     </div>
@@ -60,10 +60,8 @@
         computed :{
             listCmputed : function(){
                 var that = this;
-                console.log(that.class1)
                 return this.res.filter(function(item){
                     return item.name == that.class1
-                    console.log(item.name)
                 })
             }
         },
@@ -87,7 +85,6 @@
             }
         },
         created(){
-            console.log(this.index1+this.class1);
             this.class1 = this.$route.query.class;
             this.index1 = this.$route.query.index;
         },

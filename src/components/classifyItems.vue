@@ -2,7 +2,7 @@
 	<div class="classifyItem">
         <ul class="hm-nav" v-for="item in listCmputed">
             <li v-for="(x,i) in item.subCateList">
-                <router-link  :to="{path:'/classifyItems',query: {index : i , class : x.superCategoryId ,item : x.id}}">
+                <router-link  :to="{path:'/classifyItems',query: {index : i , class : x.superCategoryId ,item : x.id}}" exact>
                     {{x.name}}
                 </router-link>
             </li>
@@ -27,9 +27,6 @@
                 <div class="car_clear"></div>
             </div>
         </div>
-
-
-
 	</div>
 </template>
 <script>
@@ -75,17 +72,29 @@
                             if(item.category.id == that.item_last){
                                 that.lihaiData = item.itemList;
                                 that.lihaiData1 = item.category.frontName;
-                                console.log(that.lihaiData1)
                             }
                         })
                     }
                 });
             }
         },
+
         mounted(){
             var that=this;
+            var eles = (this.$el.getElementsByClassName(".hm-nav") )
+            var h1 = document.createElement("h1")
+            //令选中项在视窗范围内
+            var inter = setInterval(function(){
+                var len = $(".hm-nav").length;
+                if(len>0){
+                    clearInterval(inter);
+                }
+                $(".hm-nav").scrollLeft($(".hm-nav").children().eq(that.index_last).offset().left);
+            },100);
+
             //这个函数用于明细分类
             this.getData(this.classy_last);
+
             //这个数据是大类别数据
             $.ajax({
                 type:"get",
@@ -94,7 +103,6 @@
                     that.res = data;
                 }
             });
-
         },
         created : function(){
 			this.classy_last = this.$route.query.class; //返回商品总类别
