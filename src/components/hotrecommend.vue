@@ -28,7 +28,7 @@ Vue.use(VueResource)
 	width:100%;
 }
 #hotrecommend .back{
-padding-right:3.1rem;
+padding-right:2.2rem;
 font-size:0.5rem;
 }
 #hotrecommend .title{
