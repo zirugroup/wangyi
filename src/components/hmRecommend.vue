@@ -36,8 +36,10 @@
 		</div>
 		<div class="rc-newProd">
 			<div class="rc-np-title">
-				<p>周一至周四·新品首发</p>
-				<span>查看全部</span>
+				<router-link to="/hotrecommend/newItems">
+					<p>周一至周四·新品首发</p>
+					<span>查看全部</span>
+				</router-link>
 			</div>
 			<ul class="rc-np-ul">
 				<li v-for="x in newItemList">
