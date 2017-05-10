@@ -1,0 +1,132 @@
+{
+  "code": "200",
+  "dataUp": {
+    "flashSaleId": 1041002,
+    "screenId": 1041011,
+    "leftTime": 0,
+    "currentTime": 1494345170182,
+    "screenList": [
+      {
+        "id": 1041004,
+        "startTime": 1494295200000,
+        "status": 0
+      },
+      {
+        "id": 1041005,
+        "startTime": 1494309600000,
+        "status": 0
+      },
+      {
+        "id": 1041006,
+        "startTime": 1494324000000,
+        "status": 0
+      },
+      {
+        "id": 1041007,
+        "startTime": 1494338400000,
+        "status": 1
+      },
+      {
+        "id": 1041008,
+        "startTime": 1494381600000,
+        "status": 2
+      },
+      {
+        "id": 1041009,
+        "startTime": 1494396000000,
+        "status": 2
+      },
+      {
+        "id": 1041010,
+        "startTime": 1494410400000,
+        "status": 2
+      },
+      {
+        "id": 1041011,
+        "startTime": 1494424800000,
+        "status": 2
+      }
+    ],
+    "itemList": [
+      {
+        "itemId": 1117000,
+        "itemName": "网易智造易魔方蓝牙音箱",
+        "primaryPicUrl": "http://yanxuan.nosdn.127.net/ffd8de2ef6ebca887d5d28386d878c5d.jpg",
+        "listPicUrl": "http://yanxuan.nosdn.127.net/4a4886af02a49448834deea379d3ad13.png",
+        "simpleDesc": "纯粹原声 便携体型 高颜值",
+        "retailPrice": 238,
+        "actualPrice": 190,
+        "totalSellVolume": 300,
+        "currentSellVolume": 300,
+        "valid": true
+      },
+      {
+        "itemId": 1115053,
+        "itemName": "日式天然蔺草席三件套",
+        "primaryPicUrl": "http://yanxuan.nosdn.127.net/79190d038c3e40a015a086752450e890.jpg",
+        "listPicUrl": "http://yanxuan.nosdn.127.net/fabf9ac36751a2e1322135c56f1dc338.png",
+        "simpleDesc": "龙眉蔺草密经编织 爽滑沁凉",
+        "retailPrice": 299,
+        "actualPrice": 238,
+        "totalSellVolume": 250,
+        "currentSellVolume": 250,
+        "valid": true
+      },
+      {
+        "itemId": 1042000,
+        "itemName": "匠心天然黑檀木梳",
+        "primaryPicUrl": "http://yanxuan.nosdn.127.net/305cb5356056b9d52a2da795411e4dcc.jpg",
+        "listPicUrl": "http://yanxuan.nosdn.127.net/97904b5f40748f1183b44d14439c93ae.png",
+        "simpleDesc": "稀有名木，东非黑檀",
+        "retailPrice": 179,
+        "actualPrice": 143,
+        "totalSellVolume": 400,
+        "currentSellVolume": 400,
+        "valid": true
+      },
+      {
+        "itemId": 1050006,
+        "itemName": "日式棉接结家居服套装（儿童）",
+        "primaryPicUrl": "http://yanxuan.nosdn.127.net/e14a0be624aedaf795554f18ebc7aaa6.jpg",
+        "listPicUrl": "http://yanxuan.nosdn.127.net/46dd237dd64dc262f4341397efd40bd6.png",
+        "simpleDesc": "出口日本，全棉安睡",
+        "retailPrice": 99,
+        "actualPrice": 59,
+        "totalSellVolume": 450,
+        "currentSellVolume": 450,
+        "valid": true
+      }
+    ],
+    "wapBannerPic": null,
+    "showCateSale": false
+  },
+  "dataDown": {
+      "name": "三石福利价",
+      "itemList": [
+        {
+          "itemId": 1114011,
+          "itemName": "104升 纯PC拉链斜纹拉杆箱",
+          "primaryPicUrl": "http://yanxuan.nosdn.127.net/7e622b47c4d28dc5e7f97be57ba17b84.png",
+          "listPicUrl": "http://yanxuan.nosdn.127.net/196b5ce11930b4eadaec563cb0406634.png",
+          "simpleDesc": "104升的体积，90升的价格",
+          "retailPrice": 369,
+          "actualPrice": 299,
+          "totalSellVolume": 23471,
+          "currentSellVolume": 21564,
+          "valid": true
+        },
+        {
+          "itemId": 1086052,
+          "itemName": "20寸 铝镁合金登机箱",
+          "primaryPicUrl": "http://yanxuan.nosdn.127.net/879dde68b149091ed832980a5388304a.png",
+          "listPicUrl": "http://yanxuan.nosdn.127.net/93171a281c4ed272c007a050816e6f6c.png",
+          "simpleDesc": "时尚金属箱，奢品质感",
+          "retailPrice": 1499,
+          "actualPrice": 859,
+          "totalSellVolume": 1423,
+          "currentSellVolume": 1162,
+          "valid": true
+        }
+      ]
+    }
+}

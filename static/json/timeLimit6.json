@@ -1,0 +1,132 @@
+{
+  "code": "200",
+  "dataUp": {
+    "flashSaleId": 1041002,
+    "screenId": 1041010,
+    "leftTime": 0,
+    "currentTime": 1494345036309,
+    "screenList": [
+      {
+        "id": 1041004,
+        "startTime": 1494295200000,
+        "status": 0
+      },
+      {
+        "id": 1041005,
+        "startTime": 1494309600000,
+        "status": 0
+      },
+      {
+        "id": 1041006,
+        "startTime": 1494324000000,
+        "status": 0
+      },
+      {
+        "id": 1041007,
+        "startTime": 1494338400000,
+        "status": 1
+      },
+      {
+        "id": 1041008,
+        "startTime": 1494381600000,
+        "status": 2
+      },
+      {
+        "id": 1041009,
+        "startTime": 1494396000000,
+        "status": 2
+      },
+      {
+        "id": 1041010,
+        "startTime": 1494410400000,
+        "status": 2
+      },
+      {
+        "id": 1041011,
+        "startTime": 1494424800000,
+        "status": 2
+      }
+    ],
+    "itemList": [
+      {
+        "itemId": 1021015,
+        "itemName": "男式莫代尔V领T恤",
+        "primaryPicUrl": "http://yanxuan.nosdn.127.net/2787fa7471797bfa63951f5449118ec1.png",
+        "listPicUrl": "http://yanxuan.nosdn.127.net/9dcf74278df1d005cb813bf8765c56a0.png",
+        "simpleDesc": "丝光后处理，严抗起球",
+        "retailPrice": 99,
+        "actualPrice": 69,
+        "totalSellVolume": 800,
+        "currentSellVolume": 800,
+        "valid": true
+      },
+      {
+        "itemId": 1127028,
+        "itemName": "伦敦墨 长款钱包",
+        "primaryPicUrl": "http://yanxuan.nosdn.127.net/62aebe624475589914db7f49fbd46e16.jpg",
+        "listPicUrl": "http://yanxuan.nosdn.127.net/540becf870715712b396cb534a8a4c51.png",
+        "simpleDesc": "美国进口牛皮，多卡位划分",
+        "retailPrice": 189,
+        "actualPrice": 149,
+        "totalSellVolume": 500,
+        "currentSellVolume": 500,
+        "valid": true
+      },
+      {
+        "itemId": 1027007,
+        "itemName": "女式长柄条纹晴雨伞",
+        "primaryPicUrl": "http://yanxuan.nosdn.127.net/85731ba94bcafc0c694c63fe0c9119cb.png",
+        "listPicUrl": "http://yanxuan.nosdn.127.net/76dbe7bceb1aa9d0574570b8a39cd1e2.png",
+        "simpleDesc": "日本工艺，晴雨两用",
+        "retailPrice": 129,
+        "actualPrice": 99,
+        "totalSellVolume": 300,
+        "currentSellVolume": 300,
+        "valid": true
+      },
+      {
+        "itemId": 1071004,
+        "itemName": "日式圆形宠物盆猫砂盆",
+        "primaryPicUrl": "http://yanxuan.nosdn.127.net/05737b5ef321e0780399925caf602403.jpg",
+        "listPicUrl": "http://yanxuan.nosdn.127.net/f0abf2bf11c8d303212e4a0c1106bb73.png",
+        "simpleDesc": "日式配色，圆滑细腻",
+        "retailPrice": 89,
+        "actualPrice": 69,
+        "totalSellVolume": 150,
+        "currentSellVolume": 150,
+        "valid": true
+      }
+    ],
+    "wapBannerPic": null,
+    "showCateSale": false
+  },
+  "dataDown":  {
+      "name": "三石福利价",
+      "itemList": [
+        {
+          "itemId": 1114011,
+          "itemName": "104升 纯PC拉链斜纹拉杆箱",
+          "primaryPicUrl": "http://yanxuan.nosdn.127.net/7e622b47c4d28dc5e7f97be57ba17b84.png",
+          "listPicUrl": "http://yanxuan.nosdn.127.net/196b5ce11930b4eadaec563cb0406634.png",
+          "simpleDesc": "104升的体积，90升的价格",
+          "retailPrice": 369,
+          "actualPrice": 299,
+          "totalSellVolume": 23471,
+          "currentSellVolume": 21564,
+          "valid": true
+        },
+        {
+          "itemId": 1086052,
+          "itemName": "20寸 铝镁合金登机箱",
+          "primaryPicUrl": "http://yanxuan.nosdn.127.net/879dde68b149091ed832980a5388304a.png",
+          "listPicUrl": "http://yanxuan.nosdn.127.net/93171a281c4ed272c007a050816e6f6c.png",
+          "simpleDesc": "时尚金属箱，奢品质感",
+          "retailPrice": 1499,
+          "actualPrice": 859,
+          "totalSellVolume": 1423,
+          "currentSellVolume": 1162,
+          "valid": true
+        }
+      ]
+    }
+}

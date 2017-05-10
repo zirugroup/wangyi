@@ -101,7 +101,7 @@ margin-bottom:1.2rem;
 }
 .account-number span:nth-of-type(2){
 	color:#7f7f7f;
-	font-size:0.3rem;
+	font-size:0.33rem;
 	display: inline-block;
 	padding-top:0.1rem;
 }
@@ -114,7 +114,7 @@ margin-bottom:1.2rem;
 	box-sizing:border-box;
 	display: flex;
 	justify-content:space-between;
-	font-size:0.3rem;
+	font-size:0.35rem;
 }
 .tools{
 	padding-left:0.3rem;
@@ -125,7 +125,7 @@ margin-bottom:1.2rem;
 	flex-direction:column;
 }
 .tool a {
-	font-size:0.3rem;
+	font-size:0.33rem;
 	padding-top:0.2rem;
 }
 .tools .ind {

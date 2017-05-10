@@ -1,0 +1,132 @@
+{
+  "code": "200",
+  "dataUp": {
+    "flashSaleId": 1041001,
+    "screenId": 1041007,
+    "leftTime": 36879814,
+    "currentTime": 1494344720186,
+    "screenList": [
+      {
+        "id": 1041004,
+        "startTime": 1494295200000,
+        "status": 0
+      },
+      {
+        "id": 1041005,
+        "startTime": 1494309600000,
+        "status": 0
+      },
+      {
+        "id": 1041006,
+        "startTime": 1494324000000,
+        "status": 0
+      },
+      {
+        "id": 1041007,
+        "startTime": 1494338400000,
+        "status": 1
+      },
+      {
+        "id": 1041008,
+        "startTime": 1494381600000,
+        "status": 2
+      },
+      {
+        "id": 1041009,
+        "startTime": 1494396000000,
+        "status": 2
+      },
+      {
+        "id": 1041010,
+        "startTime": 1494410400000,
+        "status": 2
+      },
+      {
+        "id": 1041011,
+        "startTime": 1494424800000,
+        "status": 2
+      }
+    ],
+    "itemList": [
+      {
+        "itemId": 1057027,
+        "itemName": "休闲帆布厚底鞋",
+        "primaryPicUrl": "http://yanxuan.nosdn.127.net/952d51ce9b55338b5e64ec00d28187e4.jpg",
+        "listPicUrl": "http://yanxuan.nosdn.127.net/0a9bc6caa235ae0a3a23623540d46fdd.png",
+        "simpleDesc": "Keds制造商，舒适橡胶底",
+        "retailPrice": 109,
+        "actualPrice": 86,
+        "totalSellVolume": 600,
+        "currentSellVolume": 357,
+        "valid": true
+      },
+      {
+        "itemId": 1035006,
+        "itemName": "全棉单面割绒浴室地垫",
+        "primaryPicUrl": "http://yanxuan.nosdn.127.net/96b3f9af4a260902e7b8b3100af1da07.jpg",
+        "listPicUrl": "http://yanxuan.nosdn.127.net/ee92704f3b8323905b51fc647823e6e5.png",
+        "simpleDesc": "手工制作，纯棉材质，柔软舒适",
+        "retailPrice": 69,
+        "actualPrice": 56,
+        "totalSellVolume": 700,
+        "currentSellVolume": 634,
+        "valid": true
+      },
+      {
+        "itemId": 1030017,
+        "itemName": "超声波陶瓷香薰机",
+        "primaryPicUrl": "http://yanxuan.nosdn.127.net/6d61187e937a262367acfc8605ddb1e6.jpg",
+        "listPicUrl": "http://yanxuan.nosdn.127.net/5424eb81a502e8f82b8d59acba08626c.png",
+        "simpleDesc": "天然陶瓷，极细冷雾",
+        "retailPrice": 299,
+        "actualPrice": 239,
+        "totalSellVolume": 400,
+        "currentSellVolume": 356,
+        "valid": true
+      },
+      {
+        "itemId": 1110000,
+        "itemName": "丝巾架 5格",
+        "primaryPicUrl": "http://yanxuan.nosdn.127.net/872973822ecb97a59cc78b37a7222456.png",
+        "listPicUrl": "http://yanxuan.nosdn.127.net/809524d7b6803a40a79775da617c1aa6.png",
+        "simpleDesc": "加厚设计，清晰分格",
+        "retailPrice": 29,
+        "actualPrice": 19.9,
+        "totalSellVolume": 500,
+        "currentSellVolume": 457,
+        "valid": true
+      }
+    ],
+    "wapBannerPic": null,
+    "showCateSale": false
+  },
+  "dataDown":  {
+      "name": "三石福利价",
+      "itemList": [
+        {
+          "itemId": 1114011,
+          "itemName": "104升 纯PC拉链斜纹拉杆箱",
+          "primaryPicUrl": "http://yanxuan.nosdn.127.net/7e622b47c4d28dc5e7f97be57ba17b84.png",
+          "listPicUrl": "http://yanxuan.nosdn.127.net/196b5ce11930b4eadaec563cb0406634.png",
+          "simpleDesc": "104升的体积，90升的价格",
+          "retailPrice": 369,
+          "actualPrice": 299,
+          "totalSellVolume": 23471,
+          "currentSellVolume": 21564,
+          "valid": true
+        },
+        {
+          "itemId": 1086052,
+          "itemName": "20寸 铝镁合金登机箱",
+          "primaryPicUrl": "http://yanxuan.nosdn.127.net/879dde68b149091ed832980a5388304a.png",
+          "listPicUrl": "http://yanxuan.nosdn.127.net/93171a281c4ed272c007a050816e6f6c.png",
+          "simpleDesc": "时尚金属箱，奢品质感",
+          "retailPrice": 1499,
+          "actualPrice": 859,
+          "totalSellVolume": 1423,
+          "currentSellVolume": 1162,
+          "valid": true
+        }
+      ]
+    }
+}

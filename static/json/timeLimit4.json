@@ -1,0 +1,133 @@
+{
+  "code": "200",
+  "dataUp": {
+    "flashSaleId": 1041002,
+    "screenId": 1041008,
+    "leftTime": 0,
+    "currentTime": 1494344853987,
+    "screenList": [
+      {
+        "id": 1041004,
+        "startTime": 1494295200000,
+        "status": 0
+      },
+      {
+        "id": 1041005,
+        "startTime": 1494309600000,
+        "status": 0
+      },
+      {
+        "id": 1041006,
+        "startTime": 1494324000000,
+        "status": 0
+      },
+      {
+        "id": 1041007,
+        "startTime": 1494338400000,
+        "status": 1
+      },
+      {
+        "id": 1041008,
+        "startTime": 1494381600000,
+        "status": 2
+      },
+      {
+        "id": 1041009,
+        "startTime": 1494396000000,
+        "status": 2
+      },
+      {
+        "id": 1041010,
+        "startTime": 1494410400000,
+        "status": 2
+      },
+      {
+        "id": 1041011,
+        "startTime": 1494424800000,
+        "status": 2
+      }
+    ],
+    "itemList": [
+      {
+        "itemId": 1030006,
+        "itemName": "日式纯棉色织AB格四件套",
+        "primaryPicUrl": "http://yanxuan.nosdn.127.net/a98bd0e18e7fc76bfeb2f8791a8868d4.jpg",
+        "listPicUrl": "http://yanxuan.nosdn.127.net/578ffec952eb25ff072d8ea1b676bfd2.png",
+        "simpleDesc": "凹凸立体格纹，细节体现质感",
+        "retailPrice": 459,
+        "actualPrice": 329,
+        "totalSellVolume": 155,
+        "currentSellVolume": 155,
+        "valid": true
+      },
+      {
+        "itemId": 1031003,
+        "itemName": "按压式真空储物罐 长盖",
+        "primaryPicUrl": "http://yanxuan.nosdn.127.net/20ebfe50c4478119ef37077047240a30.png",
+        "listPicUrl": "http://yanxuan.nosdn.127.net/57af91506d31351187e89547f0cddb5e.png",
+        "simpleDesc": "3倍延长保鲜期，减少浪费",
+        "retailPrice": 58,
+        "actualPrice": 42,
+        "totalSellVolume": 500,
+        "currentSellVolume": 500,
+        "valid": true
+      },
+      {
+        "itemId": 1057021,
+        "itemName": "红茶玫瑰洁面手工皂",
+        "primaryPicUrl": "http://yanxuan.nosdn.127.net/794884bfabdb5bcff9c3b631c9aff4f1.jpg",
+        "listPicUrl": "http://yanxuan.nosdn.127.net/b803d8c15aa9ba22695bb8ee23c207f0.png",
+        "simpleDesc": "红茶抗氧化、玫瑰美白保湿",
+        "retailPrice": 49,
+        "actualPrice": 34,
+        "totalSellVolume": 500,
+        "currentSellVolume": 500,
+        "valid": true
+      },
+      {
+        "itemId": 1030019,
+        "itemName": "20片婴幼儿全棉湿巾",
+        "primaryPicUrl": "http://yanxuan.nosdn.127.net/2c0eb4d704465cf2adea67cad01e25a5.jpg",
+        "listPicUrl": "http://yanxuan.nosdn.127.net/397cd9e338c4512838c58c0d93a88944.png",
+        "simpleDesc": "出门随身装，即抽即用",
+        "retailPrice": 69,
+        "actualPrice": 49,
+        "totalSellVolume": 400,
+        "currentSellVolume": 400,
+        "valid": true
+      }
+    ],
+    "wapBannerPic": null,
+    "showCateSale": false
+  },
+  "dataDown": {
+      "name": "三石福利价",
+      "itemList": [
+        {
+          "itemId": 1114011,
+          "itemName": "104升 纯PC拉链斜纹拉杆箱",
+          "primaryPicUrl": "http://yanxuan.nosdn.127.net/7e622b47c4d28dc5e7f97be57ba17b84.png",
+          "listPicUrl": "http://yanxuan.nosdn.127.net/196b5ce11930b4eadaec563cb0406634.png",
+          "simpleDesc": "104升的体积，90升的价格",
+          "retailPrice": 369,
+          "actualPrice": 299,
+          "totalSellVolume": 23471,
+          "currentSellVolume": 21564,
+          "valid": true
+        },
+        {
+          "itemId": 1086052,
+          "itemName": "20寸 铝镁合金登机箱",
+          "primaryPicUrl": "http://yanxuan.nosdn.127.net/879dde68b149091ed832980a5388304a.png",
+          "listPicUrl": "http://yanxuan.nosdn.127.net/93171a281c4ed272c007a050816e6f6c.png",
+          "simpleDesc": "时尚金属箱，奢品质感",
+          "retailPrice": 1499,
+          "actualPrice": 859,
+          "totalSellVolume": 1423,
+          "currentSellVolume": 1162,
+          "valid": true
+        }
+      ]
+    }
+}
+
