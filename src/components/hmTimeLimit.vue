@@ -3,8 +3,8 @@
 		<div class="tlLogo">
 			<img src="../assets/timeLimitBanner.jpg">
 		</div>
-		<ul class="tlTime" >
-			<li v-for="(x, index) in timeMenu" @click="getTime(index)">
+		<ul class="tlTime">
+			<li v-for="(x, index) in timeMenu" @click="getTime(index, $event)">
 				<p class="timeList" >{{x}}</p>
 				<p >抢购中</p>
 			</li>
@@ -28,6 +28,25 @@
 				</div>
 			</li>
 		</ul>
+		<div class="showDown">
+			<p><em></em><span class="showDownIcon"></span>{{dataDown.name}}<em></em></p>
+			<ul class="showUp">
+				<li v-for="x in dataDown.itemList"> 
+					<div class="itemImg">
+						<img :src="x.listPicUrl">
+					</div>
+					<div class="itemInfo">
+						<p class="itemName">{{x.itemName}}</p>
+						<p>{{x.simpleDesc}}</p>
+						<div>
+							<p>限时价<span class="curPrice">￥{{x.actualPrice}}</span>原价<span class="oriPrice">￥{{x.retailPrice}}</span></p>
+							<span class="itemNum">仅剩{{x.currentSellVolume}}件</span>
+							<span class="itemTag">马上抢</span>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
 	</div>
 </template>
 <script>
@@ -40,24 +59,45 @@
 				timeMenu: ["10:00", "14:00", "18:00", "22:00", "明日10:00", "明日14:00", "明日18:00", "明日22:00" ],
 				timeStatus: ["抢购中", "已开抢", "即将开始"],
 				isActive: false,
-				timeType: 0,//待修改，需要在点击时改变
+				timeType: [],//待修改，需要在点击时改变
 				dataUp: [],
-				dataDown: []
+				dataDown: [],
+				isScroll: false
 			}
 		},
 		methods: {
-			getTime: function(index){
-				console.log(index);
+			getTime: function(index, e){
+				e.target.parentNode.previousSibling && e.target.parentNode.previousSibling.removeAttribute("class");
+				e.target.parentNode.nextSibling && e.target.parentNode.nextSibling.removeAttribute("class");
+				e.target.parentNode.setAttribute("class", "tlTimeHight");
 				this.timeType = index;
 			}
 		},
+		watch: {
+			"timeType": function(nVal, oVal){
+				// console.log(nVal, oVal);
+				this.$http.get("../static/json/timeLimit" + this.timeType + ".json").then(function(res){
+						this.dataUp = res.body.dataUp.itemList;
+						this.dataDown = res.body.dataDown;
+				})
+			}
+		},
 		mounted(){
-			console.log(this.timeType)
-			this.$http.get("../static/json/timeLimit" + this.timeType + ".json").then(function(res){
-					// console.log(res.body);
+			var date = new Date(),
+				day = date.getDate(),
+				hour = date.getHours();
+			this.$http.get("../static/json/timeLimit" + Math.floor((hour-10)/4) + ".json").then(function(res){
 					this.dataUp = res.body.dataUp.itemList;
-					this.dataDown = res.body.dataDown;
-					console.log(this.dataUp);
+					this.dataDown = res.body.dataDown[0];
+					var date = new Date(),
+						day = date.getDate(),
+						hour = date.getHours();
+					console.log(date.getHours())
+			});
+			// 菜单固定在顶部
+			window.addEventListener("scroll", function(){
+				var temp =  window.scrollY > document.querySelector(".tlLogo").offsetHeight 
+				document.querySelector(".tlTime").className = temp ? "tlTime toTop" : "tlTime";
 			})
 		}
 	}
@@ -77,10 +117,8 @@
 	/*时间轴*/
 	.tlTime{
 		width: 100%;
-		height: 36px;
-		padding: 6px 0;
+		height: 48px;
 		background: #f7dfc2;
-		/* #f48f18 */
 		display: -webkit-box;
 		overflow-x: auto;
 		-webkit-perspective: 1000;
@@ -91,17 +129,41 @@
 	}
 	.tlTime li{
 		width: 23%;
-		/*height: 90%;*/
-		padding-top: 3px;
+		height: 70%;
+		margin: 9px 0 0 6px;
 		text-align: center;
 		line-height: 16px;
 		font-size: 12px;
 		color: #888;
 		border-right: 1px solid #e0e0e0;
 	}
+	.toTop{
+		position: fixed;
+		top: 0;
+		z-index: 6;
+	}
 	.tlTime .timeList{
 		color: #333;
 		font-size: 14px;
+	}
+	.tlTime .tlTimeHight{
+		background-color: #f48f18;
+		padding-top: 9px;
+		color: #fff;
+		margin: 0;
+		height: 84%;
+		position: relative;
+	}
+	.tlTimeHight::after{
+		content: "";
+		display: block;
+		width: 0;
+		height: 0;
+		border: 5px solid transparent;
+		border-top-color: #000;
+		position: absolute;
+		bottom: 0px;
+		left: 50%;
 	}
 	/*限量限时*/
 	.tlDesc{
@@ -182,5 +244,34 @@
 		position: absolute;
 		right: 0;
 		bottom: 0;
+	}
+	.showDown{
+		width: 100%;
+	}
+	.showDown>p{
+		width: 100%;
+		height: 40px;
+		color: #000;
+		font-size: 15px;
+		text-align: center;
+		line-height: 40px;
+		background: #f4f4f4; 
+	}
+	.showDown p em{
+		display: inline-block;
+		vertical-align: middle;
+		width: 25%;
+		margin: 0 4%;
+		height: 1px;
+		background-color: #e0e0e0;
+	}
+	.showDown p .showDownIcon{
+		display: inline-block;
+		width: 18px;
+		height: 18px;
+		margin: 0 2%;
+		background: url(../assets/tlGift.png) no-repeat; 
+		background-position: 0 0;
+		background-size: 100% auto;
 	}
 </style>
