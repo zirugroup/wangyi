@@ -7,7 +7,12 @@
 			<p class="news"><span>每一次上新，都是万里挑一</span></p>
 			<ul class="classify">
 				<li>综合</li>
-				<li @click = "retailPrice()">价格</li>
+				<li @click="sortData">价格
+					<span>
+						<span v-show="pribol>1" class="sortUp">↑</span>
+						<span v-show="pribol<1" class="sortDown">↓</span>
+					</span>
+				</li>
 				<li>分类</li>
 			</ul>
 			<div class="car_like">	
@@ -18,7 +23,7 @@
 							<dt><img :src="item.primaryPicUrl"></dt>
 							<dd class="likeItems_news">{{item.simpleDesc}}</dd>
 							<dd class="likeItems_name">{{item.name}}</dd>
-							<dd class="likeItems_price">￥{{item.retailPrice | filterOne("arg",retailPrice)}}</dd>
+							<dd class="likeItems_price">￥{{item.retailPrice}}</dd>
 						</dl>
 						<div class="car_clear"></div>
 					</router-link>
@@ -37,29 +42,42 @@ Vue.use(VueResource)
 export default{
 	data (){
 		return {
-			price : "",
+			priNum : 0,
+			pribol : 1,
+			price : "1",
 			newOne : [],
-			newPro : [],
-			retailPrice : function(){
-				console.log(111)
-			}
+			newPro : []
 		}
 	},
 	mounted (){
 		this.$http.get("../../static/json/new_product.json").then(function(res){
-			// console.log(res)
 			this.newOne = res.body.newItemAds;
 			this.newPro = res.body.newItems.itemList;
 		})
 	},
-	filters : {
-		"filterOne" : function(val){
-			return val;
+	methods : {
+		sortData : function(e){
+			this.priNum++;
+			if(this.priNum%2==0){
+				this.newPro = this.newPro.sort((p1,p2)=>{
+					this.pribol = 2;
+					return p1["retailPrice"]-p2["retailPrice"];
+				})
+			}else{
+				this.newPro = this.newPro.sort((p1,p2)=>{
+					this.pribol = 0;
+					return p2["retailPrice"]-p1["retailPrice"];
+				})
+			}
+
 		}
 	}
 }
 </script>
 <style lang="css">
+.priSel{
+	border:0;
+}
 #new_pro_show .pic1{
 	width:100%;
 	height:2.6rem;

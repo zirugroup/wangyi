@@ -3,7 +3,11 @@
 		<header>
 			<span class="back"><router-link to="myAddress">&lt;</router-link></span>
 			<span class="addman">添加地址</span>
-			<span class="addSave addman" @click="writeAdd()"><router-link to="myAddress">保存</router-link></span>
+			<span class="addSave addman" @click="writeAdd">
+			<router-link :to="{path:'/myAddressAdd',query:{name:'123',number:'15911025731',city:'北京',road:'育新地铁站'}}">
+				保存
+			</router-link>
+			</span>
 		</header>
 		<main>
 			<input type="text" class="inname" placeholder="姓名" />
@@ -12,9 +16,9 @@
 			<input type="text" class="inroad" placeholder="详细地址、如街道、楼牌号" />
 			<div class="defaultAdd">
 				<span class="ding">
-					<i class="tubiao" @click="addAddr()">&#xe7b4;</i>
+					<i class="tubiao" @click="addAddr">&#xe7b4;</i>
 					<input type="checkbox" checked="checked" class="addradio" />
-					<i class="tubiao2" @click="addAddr()">&#xe601;</i><span class="dewords">设为默认地址</span>
+					<i class="tubiao2" @click="addAddr">&#xe601;</i><span class="dewords">设为默认地址</span>
 				</span>
 			</div>
 		</main>
@@ -26,7 +30,16 @@ var a =0;
 import Vue from "vue"
 export default{
 	data (){
-		return {name : "abc"};
+		return {
+			inname : "",
+			adarr : []
+		};
+	},
+	created : function(){
+		
+	},
+	mounted : function(){
+
 	},
 	methods : {
 		addAddr : function(){
@@ -37,6 +50,9 @@ export default{
 			}else{
 				$(".addradio").removeProp("checked");
 			}
+		},
+		writeAdd : function(){
+			// console.log(this.$route.query)
 		},
 		writeAdd : function(){
 			$(".manageAddrMain").html(`
@@ -120,7 +136,7 @@ html {font-size:40px;}
 	background: #FAFAFA;
 }
 .addAddr .addman{
-	font:normal 0.45rem "微软雅黑";
+	font:normal 0.4rem "微软雅黑";
 }
 .addAddr main {
 	display: flex;

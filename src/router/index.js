@@ -30,6 +30,7 @@ import item from '@/components/item'
 import mine from '@/components/mine'
 import myOrder from '@/components/myOrder'
 import myAddress from '@/components/myAddress'
+import myAddressAdd from '@/components/myAddressAdd'
 import addAddress from '@/components/addAddress'
 import hotrecommend from '@/components/hotrecommend'
 import newItems from '@/components/newItems'
@@ -125,6 +126,10 @@ export default new Router({
     {
       path: '/addAddress',
       component:addAddress
+    },
+    {
+      path: '/myAddressAdd',
+      component:myAddressAdd
     }
   ]
 })
