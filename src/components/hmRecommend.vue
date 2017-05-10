@@ -71,7 +71,7 @@
 		<router-link to="/home/hmTimeLimit" tag="div" class="rc-timeLimit">
 			<div class="rc-timeLimit-info">
 				<p>严&nbsp;选&nbsp;限&nbsp;时&nbsp;购</p>
-				<p>这里有一个计时器</p>
+				<!-- <p>这里有一个计时器</p> -->
 				<p class="rc-timeLimit-time">下一场 {{time}}:00 开始</p>
 			</div>
 			<div class="rc-timeLimit-img">
@@ -160,7 +160,9 @@
 			var hour = new Date().getHours();
 			this.ind = Math.floor((hour-10)/4);
 			this.time = 14 + 4*this.ind;
-			console.log(this.time)
+			if(this.time > 24){
+				this.time = "10";
+			}
 			this.$http.get("../static/json/timeLimit" + this.ind + ".json").then(function(res){
 					this.dataUp = res.body.dataUp.itemList[0];
 					console.log(this.dataUp);
@@ -258,7 +260,7 @@
 	.rc-pm-ul .rc-pm-brand1{
 		height: 100%;
 		background: url(../assets/hm-rc-pm1.jpg) no-repeat 0 -0.375rem;
-		background-size: 100% auto;
+		background-size: 110% auto;
 	}
 	.rc-pm-ul .rc-pm-brand2{
 		background: url(../assets/hm-rc-pm2.jpg) no-repeat;
