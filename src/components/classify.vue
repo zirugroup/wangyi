@@ -3,10 +3,12 @@
 		<div class="classify">
 	        <div class="search">
                 <div class="search_input">
-                    <i class="search_picture"></i>
-                    <span>
-                        商品搜索，共<span>4000</span>件商品
-                    </span>
+                    <router-link to="/sousuo">
+                        <i class="search_picture"></i>
+                        <span>
+                            商品搜索，共<span>4000</span>件商品
+                        </span>
+                    </router-link>
                 </div>
             </div>
             <div class="down">
