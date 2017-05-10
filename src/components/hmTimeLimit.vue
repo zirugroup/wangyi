@@ -93,22 +93,29 @@
 			}else{
 				this.timeMenu = this.timeMenu.slice(ind, ind+8);
 			}
-			this.$http.get("../static/json/timeLimit" + ind + ".json").then(function(res){
+			this.$http.get("../static/json/timeLimit" + (ind-1) + ".json").then(function(res){
 					this.dataUp = res.body.dataUp.itemList;
 					this.dataDown = res.body.dataDown[0];
 					var date = new Date(),
 						day = date.getDate(),
 						hour = date.getHours();					
-					$(".tlTime li").eq(ind).addClass("tlTimeHight");
-					$(".tlTime li").eq(ind).find(".timeStatus").text("抢购中")
-					$(".tlTime li").eq(ind).prevAll().find(".timeStatus").text("已抢购");
-					$(".tlTime li").eq(ind).nextAll().find(".timeStatus").text("即将开抢");
+					$(".tlTime li").eq(ind-1).addClass("tlTimeHight");
+					$(".tlTime li").eq(ind-1).find(".timeStatus").text("抢购中")
+					$(".tlTime li").eq(ind-1).prevAll().find(".timeStatus").text("已抢购");
+					$(".tlTime li").eq(ind-1).nextAll().find(".timeStatus").text("即将开抢");
 
 			});
 			// 菜单固定在顶部
 			window.addEventListener("scroll", function(){
-				var temp =  window.scrollY > document.querySelector(".tlLogo").offsetHeight 
-				document.querySelector(".tlTime").className = temp ? "tlTime toTop" : "tlTime";
+				// var temp =  window.scrollY > document.querySelector(".tlLogo").offsetHeight 
+				var temp =  window.scrollY > $(".tlLogo").height(); 
+				if(temp){
+					$(".tlTime").addClass("toTop");
+				}else{
+					$(".tlTime").removeClass("toTop");
+				}
+				
+				// document.querySelector(".tlTime").className = temp ? "tlTime toTop" : "tlTime";
 			})
 		}
 	}
@@ -262,6 +269,7 @@
 	}
 	.showDown{
 		width: 100%;
+		border-bottom: 40px solid #f4f4f4; 
 	}
 	.showDown>p{
 		width: 100%;
