@@ -33,7 +33,7 @@
                         </div>
                         <div  class="contains_goods">
                             <ul class="contains_goods_each">
-                                <router-link v-for="(x,i) in item.subCateList" :to="{path:'/classifyItems',query: {index : i , class : x.superCategoryId ,item : x.id}}">
+                                <router-link v-for="(x,i,key) in item.subCateList" :key="x.id" :to="{path:'/classifyItems',query: {index : i , class : x.superCategoryId ,item : x.id}}">
                                     <li :style="'background-image:url('+x.wapBannerUrl+')'">
                                         {{x.name}}
                                     </li>
