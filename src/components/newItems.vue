@@ -101,11 +101,11 @@ export default{
 	margin-top:0.2rem;
 }
 .new_p:nth-of-type(odd){
-	margin-right:0.12rem;
-	width:48.5%;
+	margin-right:0.08rem;
+	width:48%;
 }
-.new_p:nth-of-type(even){
+/*.new_p:nth-of-type(even){
 	margin-left:0.12rem;
 	width:48.5%;
-}
+}*/
 </style>
