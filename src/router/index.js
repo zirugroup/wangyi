@@ -5,14 +5,6 @@ import home from '@/components/home'
 import hmRecommend from '@/components/hmRecommend'
 import hmTimeLimit from '@/components/hmTimeLimit'
 import hmLive from '@/components/hmLive'
-// import hmkitchen from '@/components/hmkitchen'
-// import hmArmature from '@/components/hmArmature'
-// import hmClothes from '@/components/hmClothes'
-// import hmClean from '@/components/hmClean'
-// import hmBaby from '@/components/hmBaby'
-// import hmGoods from '@/components/hmGoods'
-// import hmFood from '@/components/hmFood'
-// import hmBent from '@/components/hmBent'
 
 import brand from '@/components/brand'
 
@@ -30,6 +22,7 @@ import item from '@/components/item'
 import mine from '@/components/mine'
 import myOrder from '@/components/myOrder'
 import myAddress from '@/components/myAddress'
+import myAddressAdd from '@/components/myAddressAdd'
 import addAddress from '@/components/addAddress'
 import hotrecommend from '@/components/hotrecommend'
 import newItems from '@/components/newItems'
@@ -128,8 +121,13 @@ export default new Router({
       component:addAddress
     },
     {
+<<<<<<< HEAD
       path: '/sousuo',
       component: sousuo
+=======
+      path: '/myAddressAdd',
+      component:myAddressAdd
+>>>>>>> 0fa57999674370dd4eecafa88c741ace1d2cc5de
     }
   ]
 })

@@ -7,7 +7,10 @@
 			<p class="news"><span>每一次上新，都是万里挑一</span></p>
 			<ul class="classify">
 				<li>综合</li>
-				<li @click = filPri()>价格</li>
+				<li>
+					价格
+					
+				</li>
 				<li>分类</li>
 			</ul>
 			<div class="car_like">	
@@ -51,8 +54,10 @@ Vue.use(VueResource)
 				}
 			})
 		},
-		filters : {
+		methods : {
+			filPri : function(){
 
+			}
 		}
 	}
 </script>

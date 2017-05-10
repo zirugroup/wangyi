@@ -1,26 +1,35 @@
 <template lang="html">
-	<div>
-		<!-- <router-link to="/item">单品</router-link> -->
-		<div>
-			<div class="data-reactid" v-for="item in listCmputed">
-				<div v-for="(x,i) in item.subCateList">
-                     <router-link :to="{path:'/classifyItems',query: {index : i , class : x.superCategoryId ,item : x.id}}">
-                        {{x.name}}
-                    </router-link>
-				</div>
-			</div>
-			<div v-for="item in listCmputed">
-				<div v-for="x in item.subCateList">
-					{{x.frontName}}
-				</div>
+	<div class="classifyItem">
+        <ul class="hm-nav" v-for="item in listCmputed">
+            <li v-for="(x,i) in item.subCateList">
+                <router-link  :to="{path:'/classifyItems',query: {index : i , class : x.superCategoryId ,item : x.id}}" exact>
+                    {{x.name}}
+                </router-link>
+            </li>
+        </ul>
+		<div class="data_discribe">
+            <p class="data_back"></p>
+			<p class="data_discribe_contains">
+				{{lihaiData1}}
+			</p>
+        </div>
+        <div class="car_like car_like1">
+            <div class="likeItems" >
+                <router-link :to="{path:'/item',query:{object:item}}" v-for="item in lihaiData">
+                    <dl>
+                        <dt><img :src="item.listPicUrl"></dt>
+                        <dd class="likeItems_news">{{item.simpleDesc}}</dd>
+                        <dd class="likeItems_name">{{item.name}}</dd>
+                        <dd class="likeItems_price">￥{{item.retailPrice}}</dd>
+                    </dl>
+                    <div class="car_clear"></div>
+                </router-link>
+                <div class="car_clear"></div>
             </div>
-            <div v-for="item in lihaiData">
-                <img :src="item.listPicUrl">
-				<div>{{item.name}}</div>
-				<div>{{item.simpleDesc}}</div>
-                <div>￥{{item.retailPrice}}</div>
-			</div>
-		</div>
+        </div>
+        <div class="place_hold">
+            更多内容敬请期待
+        </div>
 	</div>
 </template>
 <script>
@@ -40,7 +49,8 @@
                 index_last :  [],
                 mingxi : [],
                 lihaiData : [],
-                classify : []
+                classify : [],
+                lihaiData1 : []
             }
         },
         computed :{
@@ -64,16 +74,30 @@
                         that.mingxi.filter(function(item){
                             if(item.category.id == that.item_last){
                                 that.lihaiData = item.itemList;
+                                that.lihaiData1 = item.category.frontName;
                             }
                         })
                     }
                 });
             }
         },
+
         mounted(){
             var that=this;
+            var eles = (this.$el.getElementsByClassName(".hm-nav") )
+            var h1 = document.createElement("h1")
+            //令选中项在视窗范围内
+            var inter = setInterval(function(){
+                var len = $(".hm-nav").length;
+                if(len>0){
+                    clearInterval(inter);
+                }
+                $(".hm-nav").scrollLeft($(".hm-nav").children().eq(that.index_last).offset().left);
+            },100);
+
             //这个函数用于明细分类
             this.getData(this.classy_last);
+
             //这个数据是大类别数据
             $.ajax({
                 type:"get",
@@ -82,7 +106,6 @@
                     that.res = data;
                 }
             });
-
         },
         created : function(){
 			this.classy_last = this.$route.query.class; //返回商品总类别

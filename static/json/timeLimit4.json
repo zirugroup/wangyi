@@ -1,10 +1,10 @@
 {
   "code": "200",
   "dataUp": {
-    "flashSaleId": 1041001,
-    "screenId": 1041007,
-    "leftTime": 36879814,
-    "currentTime": 1494344720186,
+    "flashSaleId": 1041002,
+    "screenId": 1041008,
+    "leftTime": 0,
+    "currentTime": 1494344853987,
     "screenList": [
       {
         "id": 1041004,
@@ -49,58 +49,58 @@
     ],
     "itemList": [
       {
-        "itemId": 1057027,
-        "itemName": "休闲帆布厚底鞋",
-        "primaryPicUrl": "http://yanxuan.nosdn.127.net/952d51ce9b55338b5e64ec00d28187e4.jpg",
-        "listPicUrl": "http://yanxuan.nosdn.127.net/0a9bc6caa235ae0a3a23623540d46fdd.png",
-        "simpleDesc": "Keds制造商，舒适橡胶底",
-        "retailPrice": 109,
-        "actualPrice": 86,
-        "totalSellVolume": 600,
-        "currentSellVolume": 357,
+        "itemId": 1030006,
+        "itemName": "日式纯棉色织AB格四件套",
+        "primaryPicUrl": "http://yanxuan.nosdn.127.net/a98bd0e18e7fc76bfeb2f8791a8868d4.jpg",
+        "listPicUrl": "http://yanxuan.nosdn.127.net/578ffec952eb25ff072d8ea1b676bfd2.png",
+        "simpleDesc": "凹凸立体格纹，细节体现质感",
+        "retailPrice": 459,
+        "actualPrice": 329,
+        "totalSellVolume": 155,
+        "currentSellVolume": 155,
         "valid": true
       },
       {
-        "itemId": 1035006,
-        "itemName": "全棉单面割绒浴室地垫",
-        "primaryPicUrl": "http://yanxuan.nosdn.127.net/96b3f9af4a260902e7b8b3100af1da07.jpg",
-        "listPicUrl": "http://yanxuan.nosdn.127.net/ee92704f3b8323905b51fc647823e6e5.png",
-        "simpleDesc": "手工制作，纯棉材质，柔软舒适",
-        "retailPrice": 69,
-        "actualPrice": 56,
-        "totalSellVolume": 700,
-        "currentSellVolume": 634,
-        "valid": true
-      },
-      {
-        "itemId": 1030017,
-        "itemName": "超声波陶瓷香薰机",
-        "primaryPicUrl": "http://yanxuan.nosdn.127.net/6d61187e937a262367acfc8605ddb1e6.jpg",
-        "listPicUrl": "http://yanxuan.nosdn.127.net/5424eb81a502e8f82b8d59acba08626c.png",
-        "simpleDesc": "天然陶瓷，极细冷雾",
-        "retailPrice": 299,
-        "actualPrice": 239,
-        "totalSellVolume": 400,
-        "currentSellVolume": 356,
-        "valid": true
-      },
-      {
-        "itemId": 1110000,
-        "itemName": "丝巾架 5格",
-        "primaryPicUrl": "http://yanxuan.nosdn.127.net/872973822ecb97a59cc78b37a7222456.png",
-        "listPicUrl": "http://yanxuan.nosdn.127.net/809524d7b6803a40a79775da617c1aa6.png",
-        "simpleDesc": "加厚设计，清晰分格",
-        "retailPrice": 29,
-        "actualPrice": 19.9,
+        "itemId": 1031003,
+        "itemName": "按压式真空储物罐 长盖",
+        "primaryPicUrl": "http://yanxuan.nosdn.127.net/20ebfe50c4478119ef37077047240a30.png",
+        "listPicUrl": "http://yanxuan.nosdn.127.net/57af91506d31351187e89547f0cddb5e.png",
+        "simpleDesc": "3倍延长保鲜期，减少浪费",
+        "retailPrice": 58,
+        "actualPrice": 42,
         "totalSellVolume": 500,
-        "currentSellVolume": 457,
+        "currentSellVolume": 500,
+        "valid": true
+      },
+      {
+        "itemId": 1057021,
+        "itemName": "红茶玫瑰洁面手工皂",
+        "primaryPicUrl": "http://yanxuan.nosdn.127.net/794884bfabdb5bcff9c3b631c9aff4f1.jpg",
+        "listPicUrl": "http://yanxuan.nosdn.127.net/b803d8c15aa9ba22695bb8ee23c207f0.png",
+        "simpleDesc": "红茶抗氧化、玫瑰美白保湿",
+        "retailPrice": 49,
+        "actualPrice": 34,
+        "totalSellVolume": 500,
+        "currentSellVolume": 500,
+        "valid": true
+      },
+      {
+        "itemId": 1030019,
+        "itemName": "20片婴幼儿全棉湿巾",
+        "primaryPicUrl": "http://yanxuan.nosdn.127.net/2c0eb4d704465cf2adea67cad01e25a5.jpg",
+        "listPicUrl": "http://yanxuan.nosdn.127.net/397cd9e338c4512838c58c0d93a88944.png",
+        "simpleDesc": "出门随身装，即抽即用",
+        "retailPrice": 69,
+        "actualPrice": 49,
+        "totalSellVolume": 400,
+        "currentSellVolume": 400,
         "valid": true
       }
     ],
     "wapBannerPic": null,
     "showCateSale": false
   },
-  "dataDown":  {
+  "dataDown": {
       "name": "三石福利价",
       "itemList": [
         {
@@ -130,3 +130,4 @@
       ]
     }
 }
+

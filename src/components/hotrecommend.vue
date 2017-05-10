@@ -1,7 +1,7 @@
 <template lang="html">
 	<div id="hotrecommend">
 		<header>
-			<span class="back"><router-link to="/home">&lt;</router-link></span>
+			<span class="back"><router-link to="/home/hmRecommend">&lt;</router-link></span>
 			<router-link class="title" to="/hotrecommend/newItems" active-class="active_show">新品</router-link>
 			<router-link class="title" to="/hotrecommend/forecast" active-class="active_show">预告</router-link>
 		</header>
@@ -24,9 +24,11 @@ Vue.use(VueResource)
 	padding-left:0.3rem;
 	font-size:0;
 	padding-bottom:0.1rem;
+	position: fixed;
+	width:100%;
 }
 #hotrecommend .back{
-padding-right:3.1rem;
+padding-right:2.2rem;
 font-size:0.5rem;
 }
 #hotrecommend .title{
