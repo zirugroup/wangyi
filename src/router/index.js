@@ -121,13 +121,12 @@ export default new Router({
       component:addAddress
     },
     {
-<<<<<<< HEAD
       path: '/sousuo',
       component: sousuo
-=======
+    },
+    {
       path: '/myAddressAdd',
       component:myAddressAdd
->>>>>>> 0fa57999674370dd4eecafa88c741ace1d2cc5de
     }
   ]
 })
