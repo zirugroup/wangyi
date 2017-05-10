@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <router-view></router-view>
-    <footer v-if =" $route.path == '/home' || $route.path == '/car' || $route.path == '/topic' || $route.path == '/classify' || $route.path == '/mine' ">
+    <footer v-if =" $route.path == '/home/hmRecommend' || $route.path == '/car' || $route.path == '/topic' || $route.path == '/classify' || $route.path == '/mine' ">
       <router-link class="index_home" to="/home" active-class="active_index_home"><span>首页</span></router-link>
       <router-link class="index_topic" to="/topic" active-class="active_index_topic"><span>专题</span></router-link>
       <router-link class="index_classify" :to="{path : '/classify' ,query :{class : '居家',index : '0'}}"  active-class="active_index_classify"><span>分类</span></router-link>
