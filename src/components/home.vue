@@ -12,7 +12,7 @@
 				<router-link to="/home/hmTimeLimit" tag="li" class="hm-li" >
 					限时购
 				</router-link>
-					<router-link v-for="x in headCateList" tag="li" :key="x.id" :to="{path: '/home/hmLive', query:{categoryId: x.id}}" exact>
+				<router-link v-for="x in headCateList" tag="li" :key="x.id" :to="{path: '/home/hmLive', query:{categoryId: x.id}}" exact>
 						{{x.name}}
 				</router-link>
 			</ul>
@@ -34,9 +34,7 @@
 			// 推荐的项目
 			this.$http.get("../static/json/recommend.json").then(
 				function(res){
-					// console.log(res.body);
 					this.headCateList = res.body.headCateList;//nav
-					// console.log(this.headCateList);
 			});
 		}
 	}

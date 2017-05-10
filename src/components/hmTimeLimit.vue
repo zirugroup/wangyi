@@ -6,14 +6,14 @@
 		<ul class="tlTime">
 			<li v-for="(x, index) in timeMenu" @click="getTime(index, $event)">
 				<p class="timeList" >{{x}}</p>
-				<p >抢购中</p>
+				<p class="timeStatus"></p>
 			</li>
 		</ul>
 		<div class="tlDesc">
 			<span></span>限时限量&nbsp;先到先得<span></span>
 		</div>
 		<ul class="showUp">
-			<li v-for="x in dataUp"> 
+			<router-link v-for="x in dataUp" :key="x.id" :to="{path:'/item', query:{object:x}}" tag="li">
 				<div class="itemImg">
 					<img :src="x.listPicUrl">
 				</div>
@@ -26,12 +26,12 @@
 						<span class="itemTag">马上抢</span>
 					</div>
 				</div>
-			</li>
+			</router-link>
 		</ul>
 		<div class="showDown">
 			<p><em></em><span class="showDownIcon"></span>{{dataDown.name}}<em></em></p>
 			<ul class="showUp">
-				<li v-for="x in dataDown.itemList"> 
+				<router-link v-for="x in dataDown.itemList" :key="x.id" :to="{path:'/item', query:{object:x}}" tag="li">
 					<div class="itemImg">
 						<img :src="x.listPicUrl">
 					</div>
@@ -44,7 +44,7 @@
 							<span class="itemTag">马上抢</span>
 						</div>
 					</div>
-				</li>
+				</router-link>
 			</ul>
 		</div>
 	</div>
@@ -52,30 +52,30 @@
 <script>
 	import Vue from "vue"
 	import VueResource from "vue-resource"
+
+	// 新添
+	// import eventHub from '../buy.js'
 	Vue.use(VueResource)
 	export default{
 		data(){
 			return{
-				timeMenu: ["10:00", "14:00", "18:00", "22:00", "明日10:00", "明日14:00", "明日18:00", "明日22:00" ],
+				timeMenu: [],
 				timeStatus: ["抢购中", "已开抢", "即将开始"],
 				isActive: false,
-				timeType: [],//待修改，需要在点击时改变
+				timeType: [],
 				dataUp: [],
-				dataDown: [],
-				isScroll: false
+				dataDown: []
 			}
 		},
 		methods: {
 			getTime: function(index, e){
-				e.target.parentNode.previousSibling && e.target.parentNode.previousSibling.removeAttribute("class");
-				e.target.parentNode.nextSibling && e.target.parentNode.nextSibling.removeAttribute("class");
+				$(".tlTime li").removeClass("tlTimeHight");
 				e.target.parentNode.setAttribute("class", "tlTimeHight");
 				this.timeType = index;
 			}
 		},
 		watch: {
 			"timeType": function(nVal, oVal){
-				// console.log(nVal, oVal);
 				this.$http.get("../static/json/timeLimit" + this.timeType + ".json").then(function(res){
 						this.dataUp = res.body.dataUp.itemList;
 						this.dataDown = res.body.dataDown;
@@ -84,15 +84,26 @@
 		},
 		mounted(){
 			var date = new Date(),
-				day = date.getDate(),
-				hour = date.getHours();
-			this.$http.get("../static/json/timeLimit" + Math.floor((hour-10)/4) + ".json").then(function(res){
+				day = date.getDate()-1,
+				hour = date.getHours(),
+				ind = Math.floor((hour-10)/4);
+			this.timeMenu = [day+"日18:00", day+"日22:00", "10:00", "14:00", "18:00", "22:00", "明日10:00", "明日14:00", "明日18:00", "明日22:00"];
+			if( ind <= 1){
+				this.timeMenu = this.timeMenu.slice(0, 8);
+			}else{
+				this.timeMenu = this.timeMenu.slice(ind, ind+8);
+			}
+			this.$http.get("../static/json/timeLimit" + ind + ".json").then(function(res){
 					this.dataUp = res.body.dataUp.itemList;
 					this.dataDown = res.body.dataDown[0];
 					var date = new Date(),
 						day = date.getDate(),
-						hour = date.getHours();
-					console.log(date.getHours())
+						hour = date.getHours();					
+					$(".tlTime li").eq(ind).addClass("tlTimeHight");
+					$(".tlTime li").eq(ind).find(".timeStatus").text("抢购中")
+					$(".tlTime li").eq(ind).prevAll().find(".timeStatus").text("已抢购");
+					$(".tlTime li").eq(ind).nextAll().find(".timeStatus").text("即将开抢");
+
 			});
 			// 菜单固定在顶部
 			window.addEventListener("scroll", function(){
@@ -154,7 +165,10 @@
 		height: 84%;
 		position: relative;
 	}
-	.tlTimeHight::after{
+	.tlTime .tlTimeHight p{
+		color: #fff;
+	}
+	/*.tlTimeHight::after{
 		content: "";
 		display: block;
 		width: 0;
@@ -163,16 +177,17 @@
 		border-top-color: #000;
 		position: absolute;
 		bottom: 0px;
-		left: 50%;
-	}
+		left: 45%;
+	}*/
 	/*限量限时*/
 	.tlDesc{
 		width: 100%;
-		height: 50px;
+		padding-top: 10px;
+		height: 40px;
 		color: #888;
 		font-size: 14px;
 		text-align: center;
-		line-height: 50px;
+		line-height: 30px;
 		border-bottom: 0.25rem solid #f4f4f4;
 	}
 	.tlDesc span{
