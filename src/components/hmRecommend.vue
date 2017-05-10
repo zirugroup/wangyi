@@ -160,10 +160,8 @@
 			var hour = new Date().getHours();
 			this.ind = Math.floor((hour-10)/4);
 			this.time = 14 + 4*this.ind;
-			console.log(this.time)
 			this.$http.get("../static/json/timeLimit" + this.ind + ".json").then(function(res){
 					this.dataUp = res.body.dataUp.itemList[0];
-					console.log(this.dataUp);
 			});
 		}
 	}

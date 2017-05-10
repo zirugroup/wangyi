@@ -12,9 +12,9 @@
 		</div>
 		<div class="car_empty" v-if='!isEmpty()'>
 			<div class="empty_car"></div>
-			<p>去添点什么吧{{address}}</p>
+			<p>去添点什么吧</p>
 		</div>
-		<div class="car_items" v-show='!ismod' v-for="x in itemCount">
+		<div class="car_items" v-show="!ismod" v-for="x in itemCount">
 			<div class="car_full"><span>满折</span><i>再购1件，满2件享88折></i></div>
 			<div class="car_itemInfo">
 				<div class="car_selected_div"><span class="car_selected"></span></div>
@@ -30,8 +30,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="mod_car_items" v-show="ismod" v-for="x in itemCount">
-			<div class="car_full"><span>满折</span><i>再购1件，满2件享88折></i></div>
+		<div class="mod_car_items" v-show="ismod" v-for="(x,index) in allC">
 			<div class="car_itemInfo">
 				<div class="car_selected_div"><span class="car_unselected"></span></div>
 				<div class="car_img"><img :src='x.listPicUrl'/></div>
@@ -40,7 +39,7 @@
 				</div>
 				<div class="car_mod_num">
 					<p>已选择：米色条纹</p>
-					<p><span>-</span><span>{{x.count}}</span><span @click="addnum(x)">+</span></p>
+					<p><span @click="modnum(x)">-</span><span><input type="text" v-model="x.count"/></span><span @click="addnum(x)">+</span></p>
 				</div>
 			</div>
 		</div>
@@ -60,21 +59,17 @@
 				</router-link>
 				<div class="car_clear"></div>
 			</div>
-		</div>
-
-
-
-		<div class="car_footer" v-show='!ismod'>
+		</div>	
+		<div class="car_footer" v-show='count.length'>
 			<div class="car_all">
 				<div class="car_selectall"></div>
-				<div class="allcount">已选({{count}})</div>
+				<div class="allcount">已选({{count.length}})</div>
 			</div>
 			<div class="car_order">
 				<div class="allprice">￥{{itemprice}}</div>
-				<div class="order_sure">下单</div>
+				<router-link tag="div" to="/carorder" class="order_sure">下单</router-link>
 			</div>
 		</div>	
-		<router-link to="/carorder">下单</router-link>
 	</div>
 </template>
 <script>
@@ -85,12 +80,13 @@
 	export default{
 		data (){
 			return {
-				address : "aaaa",
 				carlike : [],
-				itemCount : [],
-				count : '',
-				itemprice : '',
-				ismod : false
+				itemCount : eventHub.allItem,
+				allC : this.itemCount,
+				count : eventHub.allcount,
+				itemprice : eventHub.allprice,
+				ismod : false,
+				a : 10
 			}
 		},
 		mounted (){
@@ -118,26 +114,50 @@
 				}
 			},
 			addnum : function(item){
-				console.log(item.count);
-				eventHub.$emit("add",item);
+				// for(var i =0; i<this.itemCount.length;i++){
+				// 	if(this.itemCount[i].id==item.id){
+				// 		console.log(this.itemCount[i].count)
+				// 		this.itemCount[i].count ++;
+				// 	}
+				// }
+				// console.log(this.a);
+				// this.a++;
+				eventHub.$emit("addnum",item);
+			},
+			modnum : function(item){
+				// this.a = this.a-1;
+				// console.log(item);
+				eventHub.$emit("mod",item);
 			}
 		},
 		created(){
 			this.itemCount = eventHub.allItem;
-			this.count = eventHub.allcount;
-			this.itemprice = eventHub.allprice;
+			this.allC = this.itemCount;
 		}
 	}
 </script>
 <style lang="css">
+	.mod_car_items input{
+		width: 100%;
+		height: 100%;
+		border:0;
+		text-align: center;
+	}
+	.car_img img{
+		background-color: #F4F4F4;
+	}
+	.mod_car_items{
+		border-bottom: 1px solid #f4f4f4;
+	}
 	.car_unselected{
 		height: 20px;
 		background-position: 10px -90px;
-		margin-top: 10px;
+		margin-top: 18px;
 		display: inline-block;
 		width: 25px;
 		background-size: 60%;
 		background-repeat: no-repeat;
+		margin-left: 15px;
 		background-image: url(../assets/rig.png);
 	}
 	.car_mod_price{

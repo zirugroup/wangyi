@@ -1,6 +1,6 @@
 <template lang="html">
 	<div class="itemInfo_item">
-		<div class="itemInfo_title"><a class="left" href="javascript:history.go(-1)"></a><b>商品详情</b><span class="right"></span></div>
+		<div class="itemInfo_title"><a class="left" href="javascript:history.go(-1)"></a><b>商品详情</b><router-link to="/home/hmRecommend" tag="span" class="right"></router-link></div>
 		<div class="item_main">
 			<div class="itemInfo_img">
 				<img :src="items_news.listPicUrl">
@@ -13,7 +13,7 @@
 						</li>
 						<li class="item_num">
 							<span>已选择：1罐装 x1</span>
-							<i></i>AAZ
+							<i></i>
 						</li>
 						<li class="item_active"><div><span>3个促销活动：</span><span class="item_active_title">美食节></span><span class="item_active_content">该商品参与88元任选5件包邮的，，。。。</span></div><i></i></li>
 						<li class="item_server"><span class="itemserver">服务：</span>
@@ -85,9 +85,9 @@
 		</div>
 		<div class="item_footer">
 			<div class="item_person"></div>
-			<div class="item_car"><i></i></div>
+			<router-link to="/car" tag="div" class="item_car"><i></i><span class="footer_num" v-show="item_num.length">{{item.length}}</span></router-link>
 			<div class="items_buy">
-				<div class="item_buy">立即购买</div>
+				<router-link to="/car" tag="div" class="item_buy">立即购买</router-link>
 				<div class="item_add" @click="addCart(items_news)">加入购物车</div>
 			</div>
 		</div>
@@ -95,16 +95,15 @@
 </template>
 <script>
 	import eventHub from '../buy.js';
-	import car from '../components/car.vue';
 	export default{
-		components : {car:car},
 		data(){
 			return {
 				itemInfo: '',
 				itemimg : '',
 				errorList: [],
 				items_news : '',
-				cart : car
+				item_num:eventHub.allItem,
+            	item:eventHub.allcount
 			}
 		},
 		mounted (){
@@ -188,6 +187,7 @@
 		background-position: center;
 	}
 	.item_car{
+		position: relative;
 		width: 16.5%;
 		height: 50px;
 		background-size: 185% ;  

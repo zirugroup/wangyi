@@ -28,6 +28,7 @@ import hotrecommend from '@/components/hotrecommend'
 import newItems from '@/components/newItems'
 import forecast from '@/components/forecast'
 
+import sousuo from '@/components/sousuo'
 Vue.use(Router)
 
 export default new Router({
@@ -120,8 +121,13 @@ export default new Router({
       component:addAddress
     },
     {
+<<<<<<< HEAD
+      path: '/sousuo',
+      component: sousuo
+=======
       path: '/myAddressAdd',
       component:myAddressAdd
+>>>>>>> 0fa57999674370dd4eecafa88c741ace1d2cc5de
     }
   ]
 })
