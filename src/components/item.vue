@@ -1,5 +1,5 @@
 <template lang="html">
-	<div class="itemInfo">
+	<div class="itemInfo_item">
 		<div class="itemInfo_title"><a class="left" href="javascript:history.go(-1)"></a><b>商品详情</b><span class="right"></span></div>
 		<div class="item_main">
 			<div class="itemInfo_img">
@@ -90,10 +90,8 @@
 				<div class="item_buy">立即购买</div>
 				<div class="item_add" @click="addCart(items_news)">加入购物车</div>
 			</div>
-			
 		</div>
 	</div>
-	
 </template>
 <script>
 	import eventHub from '../buy.js';

@@ -5,6 +5,17 @@ body {
   padding: 0;
   margin: 0; }
 
+.place_hold {
+  height: 1.5rem;
+  width: 100%;
+  line-height: 1.5rem;
+  text-align: center;
+  color: #666;
+  background-color: #F4F4F4; }
+
+.car_like1 {
+  margin-bottom: 0; }
+
 .classify .search {
   height: 1.4rem;
   width: 100%;
@@ -14,11 +25,26 @@ body {
   border-bottom: 1px solid #ccc; }
   .classify .search .search_input {
     height: 0.8rem;
-    padding-top: 0.2rem;
+    padding-left: 1.6rem;
     box-sizing: border-box;
     width: 100%;
     background: #ededed;
     border-radius: 0.1rem; }
+    .classify .search .search_input .search_picture {
+      vertical-align: middle;
+      background-image: url(http://yanxuan.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/icon-normal/search2-2fb94833aa.png);
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      margin-right: .13333rem;
+      display: inline-block;
+      width: .37333rem;
+      height: .37333rem; }
+    .classify .search .search_input span {
+      font-size: .37333rem;
+      color: #666;
+      display: inline-block;
+      height: 0.8rem;
+      line-height: 0.8rem; }
 .classify .down {
   padding-bottom: 1.3rem; }
   .classify .down .down_toolbar {

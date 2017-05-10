@@ -13,7 +13,7 @@
 				{{lihaiData1}}
 			</p>
         </div>
-        <div class="car_like">
+        <div class="car_like car_like1">
             <div class="likeItems" >
                 <router-link :to="{path:'/item',query:{object:item}}" v-for="item in lihaiData">
                     <dl>
@@ -26,6 +26,9 @@
                 </router-link>
                 <div class="car_clear"></div>
             </div>
+        </div>
+        <div class="place_hold">
+            更多内容敬请期待
         </div>
 	</div>
 </template>
