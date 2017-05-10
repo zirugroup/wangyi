@@ -42,14 +42,14 @@
 				</router-link>
 			</div>
 			<ul class="rc-np-ul">
-				<li v-for="x in newItemList">
+				<router-link  tag="li" v-for="x in newItemList" :key="x.id" :to="{path:'/item',query:{object:x}}">
 					<img :src="x.listPicUrl">
 					<div class="rc-npInfo">
 						<p>{{x.name}}</p>
 						<p  class="rc-npName">{{x.simpleDesc}}</p>
 						<span>￥{{x.retailPrice}}</span>
 					</div>
-				</li>
+				</router-link>
 				<li class="rc-npMore">
 					<p>查看全部</p>
 				</li>
@@ -58,31 +58,35 @@
 		<div class="rc-hotReco">
 			<p>人气推荐</p>
 			<ul>
-				<li v-for="x in popularItemList">
+				<router-link tag="li" v-for="x in popularItemList" :key="x.id" :to="{path:'/item',query:{object:x}}">
 					<img :src="x.listPicUrl">
 					<div>
 						<p>{{x.name}}</p>
 						<p class="rcHotReco-desc">{{x.simpleDesc}}</p>
 						<span>￥{{x.retailPrice}}</span>
 					</div>
-				</li>
+				</router-link>
 			</ul>
 		</div>
-		<div class="rc-timeLimit">
+		<router-link to="/home/hmTimeLimit" tag="div" class="rc-timeLimit">
 			<div class="rc-timeLimit-info">
 				<p>严&nbsp;选&nbsp;限&nbsp;时&nbsp;购</p>
 				<p>这里有一个计时器</p>
-				<p class="rc-timeLimit-time">下一场 18:00 开始</p>
+				<p class="rc-timeLimit-time">下一场 {{time}}:00 开始</p>
 			</div>
 			<div class="rc-timeLimit-img">
-				<p>
-					<span>￥24</span>
-					<span class="hm-rc-oriprice">￥30</span>
-				</p>
+				<div>
+					<img :src="dataUp.listPicUrl">
+					<p>
+						<span>￥{{dataUp.actualPrice}}</span>
+						<span class="hm-rc-oriprice">￥{{dataUp.retailPrice}}</span>
+					</p>
+				</div>				
 			</div>
-		</div>
+		</router-link>
+
 		<div class="rc-chioce">
-			<p>专题精选</p>
+			<router-link to="/topic" tag="p">专题精选</router-link>
 			<img :src=" topicList.itemPicUrl ">
 			<div>
 				<p>{{topicList.title}}<span>{{topicList.priceInfo}}</span></p>
@@ -92,22 +96,22 @@
 		<div class="rc-rcType" v-for="items in recommenList">
 			<p>{{items.name}}好物</p>
 			<ul class="rc-rcType-ul">
-				<li v-for="x in items.itemList.slice(0,7)">
-					<div class="rc-rcType-img">
+				<li v-for="x  in items.itemList.slice(0,7)">
+					<router-link :to="{path:'/item',query:{object:x}}" tag="div" class="rc-rcType-img" >
 						<span class="rc-rcType-img-color" v-if="x.colorNum">{{x.colorNum}}色可选</span>
 						<div class="rc-rcType-imgUrl"><img :src="x.listPicUrl" /></div>
 						<p class="rc-rcType-img-desc">{{x.simpleDesc}}</p>
-					</div>
+					</router-link>
 					<div class="rc-rcType-info">
 						<p>{{x.name}}</p>
 						<p class="rc-rcType-info-pric">￥{{x.retailPrice}}</p>
 					</div>
 				</li>
 				<li class="rc-rcType-last">
-					<div>
+					<router-link tag="div" :to="{path: '/home/hmLive', query:{categoryId: items.id}}" exact>
 						<p>更多{{items.name}}好物</p>
 						<span></span>
-					</div>
+					</router-link>
 				</li>
 			</ul>
 		</div>
@@ -117,6 +121,9 @@
 	import Vue from "vue"
 	import VueResource from "vue-resource"	
 	import Swiper from "../../static/js/swiper-3.3.1.min.js"
+	// 新添
+	import eventHub from '../buy.js'
+
 	Vue.use(VueResource)
 	export default{
 		data() {
@@ -127,14 +134,16 @@
 				newItemList: [],//新品首发
 				topicList: [],//专题精选
 				recommenList: [],
-				swiper1 : null
+				swiper1 : null,
+				ind: '',
+				time: '',
+				dataUp: []
 			}
 		},
 		mounted() {
 			// 推荐的项目
 			this.$http.get("../static/json/recommend.json").then(
 				function(res){
-					console.log(res.body);
 					this.focusList = res.body.focusList;//轮播图数据，不能使用
 					this.policyDescList = res.body.policyDescList;//轮播图下面的三条
 					this.popularItemList = res.body.popularItemList;//人气推荐
@@ -146,7 +155,16 @@
 			    	autoplay: 2000,
 			    	// 如果需要分页器
 				    pagination: '.swiper-pagination'	   
-			    });
+			});
+			// 动态获取限时购展现数据
+			var hour = new Date().getHours();
+			this.ind = Math.floor((hour-10)/4);
+			this.time = 14 + 4*this.ind;
+			console.log(this.time)
+			this.$http.get("../static/json/timeLimit" + this.ind + ".json").then(function(res){
+					this.dataUp = res.body.dataUp.itemList[0];
+					console.log(this.dataUp);
+			});
 		}
 	}
 </script>
@@ -388,13 +406,21 @@
 		font-size: 0.3rem;
 	}
 	.rc-timeLimit .rc-timeLimit-img{
-		background: url(../assets/hm-timeLimit.png) no-repeat;
-		background-size: 97% auto;
+		width: 100%;
 		position: relative;
 		font-size: 0.375rem;
 		color: #fff;
 		line-height: 0.375rem;
 		text-align: center;
+	}
+	.rc-timeLimit .rc-timeLimit-img>div{
+		width: 70%;
+		height: auto;
+		margin-left: 10%;
+	}
+	.rc-timeLimit .rc-timeLimit-img img{
+		width: 100%;
+		height: auto;
 	}
 	.rc-timeLimit .rc-timeLimit-img p{
 		position: absolute;
