@@ -82,7 +82,6 @@ body{
 					}
 				}
 			}
-			
 		}
 		.down_contains{
 			overflow-y: auto;
@@ -172,4 +171,26 @@ body{
 		}
 	}
 }
+
+.classifyItem{
+	width : 100%;
+
+	.data_discribe{
+	    box-sizing : border-box;
+	    height: 1.4rem;
+	    .data_back{
+	    	height : 0.2rem;
+	    	background-color : #F4F4F4;
+	    }
+	    .data_discribe_contains{
+	    	background-color: #fff;
+	    	line-height: 1.2rem;
+	    	height :1.2rem;
+	    	text-align:center;
+    	    color: #333;
+    		font-size: .37333rem;
+	    }
+	}
+}
+
 

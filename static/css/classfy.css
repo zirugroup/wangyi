@@ -140,4 +140,20 @@ body {
         background-color: "";
         background-size: auto 1.92rem; }
 
+.classifyItem {
+  width: 100%; }
+  .classifyItem .data_discribe {
+    box-sizing: border-box;
+    height: 1.4rem; }
+    .classifyItem .data_discribe .data_back {
+      height: 0.2rem;
+      background-color: #F4F4F4; }
+    .classifyItem .data_discribe .data_discribe_contains {
+      background-color: #fff;
+      line-height: 1.2rem;
+      height: 1.2rem;
+      text-align: center;
+      color: #333;
+      font-size: .37333rem; }
+
 /*# sourceMappingURL=classfy.css.map */
