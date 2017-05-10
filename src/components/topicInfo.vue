@@ -1,9 +1,9 @@
 <template lang="html">
 	<div class="info">
 		<div class="infohead">
-		<router-link to="/topic">
-			<img src="../assets/shouye.png" alt="">
-		</router-link>
+			<router-link to="/topic">
+				<img src="../assets/shouye.png" alt="">
+			</router-link>
 			<img src="../assets/yanxuan.png">
 		</div>
 		<div class="swiper-container topicInfo_lunzu">
@@ -183,7 +183,7 @@
 	    }
 	    .infohead{
 	    	width: 100%;
-	    	height: 1.75rem;
+	    	height: 1.3rem;
 	    	position: fixed;
 	    	top: 0;
 	    	z-index: 2;
@@ -191,19 +191,20 @@
 	    	padding-top: 0.25rem;
 	    	border:1px solid #fff;
 	    	line-height: 1.75rem;
+	    	text-align: center;
 	    	
 	    }
-	    .infohead img:first-of-type{
-	    	width: 1rem;
-			height: 1rem;
-			display: inline-block;
+	    .infohead a img:first-of-type{
+	    	width: 0.7rem;
+			height: 0.7rem;
+			display: block;
+			margin-top: 0.25rem;
 			margin-left: 0.25rem;
+			float: left;
 	    }
-	    .infohead>img:last-of-type{
-	    	width: 3.5rem;
-	    	height: 1rem;
-	    	display: inline-block;
-	    	margin-left: 1rem;
+	    .infohead>img{
+	    	width: 4rem ;
+	    	height: 1rem ;
 	    }
 	    .items1{
 			background: url("../assets/lun1.jpg");
@@ -238,7 +239,7 @@
 			width: 1rem;
 			height: 1rem;
 			float: left;
-			margin-left: 0.625rem;
+			margin-left: 0.25rem;
 			line-height: 1rem;
 
 
@@ -431,9 +432,10 @@
 		.topic_item dd{
 			width: 100%;
 			height: 0.6rem;
-			font-size: 0.55rem;
+			font-size: 0.5rem;
 			line-height: 0.6rem;
 			color: #333;
 			text-align: center;
+			margin-top: 0.3rem;
 		}
 </style>

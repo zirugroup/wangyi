@@ -1,15 +1,18 @@
 <template lang="html">
 	<div class="zhuanti" >
 		<div class="nav">
-			<div class="lunzou swiper-container">
-				<div class="swiper-wrapper topic_all">
-					<div class="lunzi item1s tpitem swiper-slide"><span>丁磊私物推荐</span></div>
-					<div class="lunzi item2s tpitem swiper-slide"><span>特色系列</span></div>
-					<div class="lunzi item3s tpitem swiper-slide"><span>明星商品</span></div>
-					<div class="lunzi item4s tpitem swiper-slide"><span>严选幕后</span></div>
-					<div class="lunzi item5s tpitem swiper-slide"><span>严选推荐</span></div>
+			<router-link to="/topicgroom">
+				<div class="lunzou swiper-container">
+					<div class="swiper-wrapper topic_all">
+							<div class="lunzi item1s tpitem swiper-slide"><span>丁磊私物推荐</span></div>
+							<div class="lunzi item2s tpitem swiper-slide"><span>特色系列</span></div>
+							<div class="lunzi item3s tpitem swiper-slide"><span>明星商品</span></div>
+							<div class="lunzi item4s tpitem swiper-slide"><span>严选幕后</span></div>
+							<div class="lunzi item5s tpitem swiper-slide"><span>严选推荐</span></div>
+						
+					</div>
 				</div>
-			</div>
+			</router-link>
 		</div>
 		<div class="show" v-for="x in topicInfo">
 			<router-link to="/topicInfo">
@@ -84,7 +87,7 @@
 		}
 	.lunzou{
         width: 100%;
-       	height:5rem;
+       	height:2rem;
     }
     .lunzi{
     	width: 32% !important;
@@ -159,15 +162,16 @@
 		height: 1.2rem;
 	}
 	.icon{
-		width: 1.15rem;
-		height: 1.15rem;
+		width: 1rem;
+		height: 1rem;
 		float: left;
-		margin-left: 0.625rem;
+		margin-left: 0.25rem;
+		margin-top: 0.1rem;
 
 	}
 	.icon img{
-		width: 1.15rem;
-		height: 1.15rem;
+		width: 1rem;
+		height: 1rem;
 		border-radius: 50%;
 	}
 	.nickname{
@@ -176,7 +180,6 @@
 		line-height: 0.8rem;
 		font-size: 0.5rem;
 		color: #333;
-		margin-left: 0.3rem;
 		float: left;
 		margin-top: 0.25rem
 	}
@@ -202,14 +205,14 @@
 		background:linear-gradient(to right,transparent,rgba(0,0,0,0.5));
 	}
 	.distance img{
-		margin:0.15rem 0.1rem 0 0.6rem;
+		margin:0.15rem 0.1rem 0 0.5rem;
 	}
 	.distance span{
 		display: block;
 		float: right;
 		margin: 0.1rem 0.1rem 0 0;
 		color: #fff;
-		font-size: 0.46rem;
+		font-size: 0.4rem;
 		vertical-align: bottom;
 	}
 	.price{
@@ -221,7 +224,7 @@
 	}
 	.price div:first-of-type{
 		margin-left: 0.25rem;
-		font-size: 0.6rem;
+		font-size: 0.45rem;
 		float: left;
 	}
 	.price div:nth-of-type(2){
