@@ -1,7 +1,7 @@
 <template lang="html">
 	<div class="classifyItem">
         <ul class="hm-nav" v-for="item in listCmputed">
-            <li v-for="(x,i) in item.subCateList">
+            <li v-for="(x,i) in item.subCateList" >
                 <router-link  :to="{path:'/classifyItems',query: {index : i , class : x.superCategoryId ,item : x.id}}" exact>
                     {{x.name}}
                 </router-link>
@@ -15,7 +15,7 @@
         </div>
         <div class="car_like car_like1">
             <div class="likeItems" >
-                <router-link :to="{path:'/item',query:{object:item}}" v-for="item in lihaiData">
+                <router-link :to="{path:'/item',query:{object:item}}" v-for="(item,key) in lihaiData" :key="item.id">
                     <dl>
                         <dt><img :src="item.listPicUrl"></dt>
                         <dd class="likeItems_news">{{item.simpleDesc}}</dd>
@@ -28,7 +28,7 @@
             </div>
         </div>
         <div class="place_hold">
-            更多内容敬请期待
+            <span>更多内容敬请期待</span>
         </div>
 	</div>
 </template>
