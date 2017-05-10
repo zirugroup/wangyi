@@ -309,10 +309,8 @@
 			color: #666;
 		}
 		.liuyanban{
-			width: 100%;
 			height: 0.6rem;
 			padding-left:0.25rem;
-			padding-right: 0.25rem; 
 			margin-top: 0.5rem;
 			background-color: #fff;
 		}

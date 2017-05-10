@@ -73,8 +73,8 @@
 		margin-bottom: 0.25rem;
 	}
 	.topicgroom_head img{
-		width: 0.7rem;
-		height: 0.7rem;
+		width: 0.5rem;
+		height: 0.5rem;
 		display: block;
 		margin-left: 0.25rem;
 		margin-top: 0.2rem;
@@ -102,8 +102,8 @@
 
 	}
 	.topicgroom_icon img{
-		width: 1rem;
-		height: 1rem;
+		width: 0.8rem;
+		height: 0.8rem;
 		border-radius: 50%;
 	}
 	.topicgroom_nickname{
