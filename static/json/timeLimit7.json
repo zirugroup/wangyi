@@ -1,10 +1,10 @@
 {
   "code": "200",
   "dataUp": {
-    "flashSaleId": 1041001,
-    "screenId": 1041007,
-    "leftTime": 36879814,
-    "currentTime": 1494344720186,
+    "flashSaleId": 1041002,
+    "screenId": 1041011,
+    "leftTime": 0,
+    "currentTime": 1494345170182,
     "screenList": [
       {
         "id": 1041004,
@@ -49,58 +49,58 @@
     ],
     "itemList": [
       {
-        "itemId": 1057027,
-        "itemName": "休闲帆布厚底鞋",
-        "primaryPicUrl": "http://yanxuan.nosdn.127.net/952d51ce9b55338b5e64ec00d28187e4.jpg",
-        "listPicUrl": "http://yanxuan.nosdn.127.net/0a9bc6caa235ae0a3a23623540d46fdd.png",
-        "simpleDesc": "Keds制造商，舒适橡胶底",
-        "retailPrice": 109,
-        "actualPrice": 86,
-        "totalSellVolume": 600,
-        "currentSellVolume": 357,
+        "itemId": 1117000,
+        "itemName": "网易智造易魔方蓝牙音箱",
+        "primaryPicUrl": "http://yanxuan.nosdn.127.net/ffd8de2ef6ebca887d5d28386d878c5d.jpg",
+        "listPicUrl": "http://yanxuan.nosdn.127.net/4a4886af02a49448834deea379d3ad13.png",
+        "simpleDesc": "纯粹原声 便携体型 高颜值",
+        "retailPrice": 238,
+        "actualPrice": 190,
+        "totalSellVolume": 300,
+        "currentSellVolume": 300,
         "valid": true
       },
       {
-        "itemId": 1035006,
-        "itemName": "全棉单面割绒浴室地垫",
-        "primaryPicUrl": "http://yanxuan.nosdn.127.net/96b3f9af4a260902e7b8b3100af1da07.jpg",
-        "listPicUrl": "http://yanxuan.nosdn.127.net/ee92704f3b8323905b51fc647823e6e5.png",
-        "simpleDesc": "手工制作，纯棉材质，柔软舒适",
-        "retailPrice": 69,
-        "actualPrice": 56,
-        "totalSellVolume": 700,
-        "currentSellVolume": 634,
-        "valid": true
-      },
-      {
-        "itemId": 1030017,
-        "itemName": "超声波陶瓷香薰机",
-        "primaryPicUrl": "http://yanxuan.nosdn.127.net/6d61187e937a262367acfc8605ddb1e6.jpg",
-        "listPicUrl": "http://yanxuan.nosdn.127.net/5424eb81a502e8f82b8d59acba08626c.png",
-        "simpleDesc": "天然陶瓷，极细冷雾",
+        "itemId": 1115053,
+        "itemName": "日式天然蔺草席三件套",
+        "primaryPicUrl": "http://yanxuan.nosdn.127.net/79190d038c3e40a015a086752450e890.jpg",
+        "listPicUrl": "http://yanxuan.nosdn.127.net/fabf9ac36751a2e1322135c56f1dc338.png",
+        "simpleDesc": "龙眉蔺草密经编织 爽滑沁凉",
         "retailPrice": 299,
-        "actualPrice": 239,
-        "totalSellVolume": 400,
-        "currentSellVolume": 356,
+        "actualPrice": 238,
+        "totalSellVolume": 250,
+        "currentSellVolume": 250,
         "valid": true
       },
       {
-        "itemId": 1110000,
-        "itemName": "丝巾架 5格",
-        "primaryPicUrl": "http://yanxuan.nosdn.127.net/872973822ecb97a59cc78b37a7222456.png",
-        "listPicUrl": "http://yanxuan.nosdn.127.net/809524d7b6803a40a79775da617c1aa6.png",
-        "simpleDesc": "加厚设计，清晰分格",
-        "retailPrice": 29,
-        "actualPrice": 19.9,
-        "totalSellVolume": 500,
-        "currentSellVolume": 457,
+        "itemId": 1042000,
+        "itemName": "匠心天然黑檀木梳",
+        "primaryPicUrl": "http://yanxuan.nosdn.127.net/305cb5356056b9d52a2da795411e4dcc.jpg",
+        "listPicUrl": "http://yanxuan.nosdn.127.net/97904b5f40748f1183b44d14439c93ae.png",
+        "simpleDesc": "稀有名木，东非黑檀",
+        "retailPrice": 179,
+        "actualPrice": 143,
+        "totalSellVolume": 400,
+        "currentSellVolume": 400,
+        "valid": true
+      },
+      {
+        "itemId": 1050006,
+        "itemName": "日式棉接结家居服套装（儿童）",
+        "primaryPicUrl": "http://yanxuan.nosdn.127.net/e14a0be624aedaf795554f18ebc7aaa6.jpg",
+        "listPicUrl": "http://yanxuan.nosdn.127.net/46dd237dd64dc262f4341397efd40bd6.png",
+        "simpleDesc": "出口日本，全棉安睡",
+        "retailPrice": 99,
+        "actualPrice": 59,
+        "totalSellVolume": 450,
+        "currentSellVolume": 450,
         "valid": true
       }
     ],
     "wapBannerPic": null,
     "showCateSale": false
   },
-  "dataDown":  {
+  "dataDown": {
       "name": "三石福利价",
       "itemList": [
         {
