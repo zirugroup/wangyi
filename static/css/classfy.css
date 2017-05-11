@@ -197,13 +197,19 @@ body {
         background-color: "";
         background-size: auto 1.92rem; }
 
+.nav_classify {
+  position: fixed;
+  top: 46px;
+  z-index: 4; }
+
 .classifyItem {
   width: 100%; }
   .classifyItem .data_discribe {
     box-sizing: border-box;
-    height: 1.4rem; }
+    height: 1.4rem;
+    margin-top: 84px; }
     .classifyItem .data_discribe .data_back {
-      height: 0.2rem;
+      height: 0.4rem;
       background-color: #F4F4F4; }
     .classifyItem .data_discribe .data_discribe_contains {
       background-color: #fff;
