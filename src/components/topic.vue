@@ -42,7 +42,6 @@
 <script>
 	import Vue from "vue"
 	import VueResource from "vue-resource"
-	
 	import Swiper from "../../static/js/swiper-3.3.1.min.js"
 	Vue.use(VueResource)
 	export default{
@@ -77,13 +76,13 @@
 	@import "../../static/css/swiper-3.3.1.min.css";
 	.zhuanti{
 		width: 100%;
-		height: 0.8rem;
+		height: 100%;
 		background-color: #f4f4f4;
 	}
 	.nav{
-			width: 100%;
 			height: 2rem;
 			padding: 0.25rem;
+			background-color: #fff;
 		}
 	.lunzou{
         width: 100%;
@@ -143,7 +142,7 @@
 		margin-right: 0px !important;
 
 	}
-	.item span{
+	.tpitem span{
 		font-size:0.3rem;
 		position: absolute;
 		width: 100%;

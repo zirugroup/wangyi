@@ -12,6 +12,32 @@ body {
   text-align: center;
   color: #666;
   background-color: #F4F4F4; }
+  .place_hold span {
+    position: relative; }
+    .place_hold span:after {
+      right: -.74667rem;
+      position: absolute;
+      content: '';
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      height: 1px;
+      width: .53333rem;
+      background-color: #d9d9d9;
+      -webkit-transform-origin: 50% 100% 0;
+      transform-origin: 50% 100% 0; }
+    .place_hold span:before {
+      left: -.74667rem;
+      position: absolute;
+      content: '';
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      height: 1px;
+      width: .53333rem;
+      background-color: #d9d9d9;
+      -webkit-transform-origin: 50% 100% 0;
+      transform-origin: 50% 100% 0; }
 
 .car_like1 {
   margin-bottom: 0; }
@@ -22,7 +48,10 @@ body {
   padding: 0.3rem;
   box-sizing: border-box;
   background: #fff;
-  border-bottom: 1px solid #ccc; }
+  border-bottom: 1px solid #ccc;
+  position: fixed;
+  top: 0;
+  z-index: 4; }
   .classify .search .search_input {
     height: 0.8rem;
     padding-left: 1.6rem;
@@ -49,9 +78,11 @@ body {
   padding-bottom: 1.3rem; }
   .classify .down .down_toolbar {
     width: 20%;
-    position: absolute;
+    position: fixed;
     top: 1.4rem;
-    left: 0; }
+    left: 0;
+    overflow-y: auto;
+    overflow-x: hidden; }
     .classify .down .down_toolbar li {
       padding-top: 0.5rem;
       position: relative; }
@@ -87,7 +118,7 @@ body {
     width: 80%;
     right: 0;
     top: 1.4rem;
-    position: absolute;
+    position: fixed;
     box-sizing: border-box;
     height: 14rem;
     padding: 0.4rem 0.4rem 0.28rem 0.4rem; }
