@@ -6,7 +6,7 @@
 					<img src="../assets/sousuo.png" alt="" width="100%" height="100%">
 					<input type="text" :placeholder="place.keyword">
 				</div>
-				<router-link to="/hotrecommend">
+				<router-link to="/home/hmrecommend">
 				<span>取消</span>
 				</router-link>
 			</div>
