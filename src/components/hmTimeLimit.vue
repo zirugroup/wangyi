@@ -52,9 +52,6 @@
 <script>
 	import Vue from "vue"
 	import VueResource from "vue-resource"
-
-	// 新添
-	// import eventHub from '../buy.js'
 	Vue.use(VueResource)
 	export default{
 		data(){
@@ -85,37 +82,40 @@
 		mounted(){
 			var date = new Date(),
 				day = date.getDate()-1,
-				hour = date.getHours(),
-				ind = Math.floor((hour-10)/4);
+				hour = date.getHours();
 			this.timeMenu = [day+"日18:00", day+"日22:00", "10:00", "14:00", "18:00", "22:00", "明日10:00", "明日14:00", "明日18:00", "明日22:00"];
-			if( ind <= 1){
+			console.log(this.timeMenu.length)
+			if( hour < 6 || hour >= 22 ){
+				this.timeMenu = this.timeMenu.slice(3, 11);
+				console.log(this.timeMenu)
+			}else if( hour < 14 && hour >= 6){
 				this.timeMenu = this.timeMenu.slice(0, 8);
 			}else{
-				this.timeMenu = this.timeMenu.slice(ind, ind+8);
-			}
-			this.$http.get("../static/json/timeLimit" + (ind-1) + ".json").then(function(res){
+				this.timeMenu = this.timeMenu.slice(Math.floor((hour-10)/4), Math.floor((hour-10)/4)+8 );
+			}			
+			this.$http.get("../static/json/timeLimit2.json").then(function(res){
 					this.dataUp = res.body.dataUp.itemList;
 					this.dataDown = res.body.dataDown[0];
-					var date = new Date(),
-						day = date.getDate(),
-						hour = date.getHours();					
-					$(".tlTime li").eq(ind-1).addClass("tlTimeHight");
-					$(".tlTime li").eq(ind-1).find(".timeStatus").text("抢购中")
-					$(".tlTime li").eq(ind-1).prevAll().find(".timeStatus").text("已抢购");
-					$(".tlTime li").eq(ind-1).nextAll().find(".timeStatus").text("即将开抢");
-
+					if(hour >= 10)	{
+						$(".tlTime li").eq(2).addClass("tlTimeHight");
+						$(".tlTime li").eq(2).find(".timeStatus").text("抢购中");
+						$(".tlTime li:lt(2)").find(".timeStatus").text("已抢购");
+						$(".tlTime li:gt(2)").find(".timeStatus").text("即将开抢");
+					}else if(hour>= 6 && hour<10){
+						$(".tlTime li").eq(1).addClass("tlTimeHight");
+						$(".tlTime li").eq(1).find(".timeStatus").text("抢购中");
+						$(".tlTime li").eq(0).find(".timeStatus").text("已抢购");
+						$(".tlTime li:gt(1)").find(".timeStatus").text("即将开抢");
+					}								
 			});
 			// 菜单固定在顶部
 			window.addEventListener("scroll", function(){
-				// var temp =  window.scrollY > document.querySelector(".tlLogo").offsetHeight 
 				var temp =  window.scrollY > $(".tlLogo").height(); 
 				if(temp){
 					$(".tlTime").addClass("toTop");
 				}else{
 					$(".tlTime").removeClass("toTop");
 				}
-				
-				// document.querySelector(".tlTime").className = temp ? "tlTime toTop" : "tlTime";
 			})
 		}
 	}
