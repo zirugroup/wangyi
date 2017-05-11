@@ -129,8 +129,10 @@
 		background: url(../assets/brandIcon.png) no-repeat 0 -265px;
 		background-size: 320%;  
 	}
-	.prandName{
+	.prandName:first-of-type{
 		margin-top: 44px;
+	}
+	.prandName{
 		width: 100%;
 		height: 200px;
 		position: relative;

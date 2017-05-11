@@ -16,7 +16,6 @@
 		</div>
 		<div class="rc-prandMarker">
 			<router-link to="/brand" class="rc-pm-title" tag="p">品牌制造商直供<span class="rc-pm-icon"></span></router-link>
-			<!-- <p class="rc-pm-title">品牌制造商直供<span class="rc-pm-icon"></span></p> -->
 			<ul class="rc-pm-ul">
 				<li class="rc-pm-brand1">
 					<p><span class="rc-pm-name">CK</span>制造商</p>
@@ -71,7 +70,7 @@
 		<router-link to="/home/hmTimeLimit" tag="div" class="rc-timeLimit">
 			<div class="rc-timeLimit-info">
 				<p>严&nbsp;选&nbsp;限&nbsp;时&nbsp;购</p>
-				<!-- <p>这里有一个计时器</p> -->
+				<p class="ltTimeInfo"><span class="ltHour">03</span>: <span class="ltMinute">50</span>: <span class="ltSecond">18</span></p>
 				<p class="rc-timeLimit-time">下一场 {{time}}:00 开始</p>
 			</div>
 			<div class="rc-timeLimit-img">
@@ -137,7 +136,10 @@
 				swiper1 : null,
 				ind: '',
 				time: '',
-				dataUp: []
+				dataUp: [],
+				tlHour: '',//倒计时 时 、分、秒
+				tlMinute: '',
+				tlSecond: ''
 			}
 		},
 		mounted() {
@@ -158,16 +160,32 @@
 			});
 			// 动态获取限时购展现数据
 			var hour = new Date().getHours();
-			this.ind = Math.floor((hour-10)/4);
-			this.time = 14 + 4*this.ind;
-			if(this.time > 24){
-				this.time = "10";
+			if(hour < 10 || hour >= 22){
+				this.ind = 7;//默认获取最后一组数据
+				this.time = 10;
+			}else{
+				this.ind = Math.floor((hour-10)/4);
+				this.time = 14 + 4*this.ind;
 			}
+			console.log(hour);						
 			this.$http.get("../static/json/timeLimit" + this.ind + ".json").then(function(res){
 					this.dataUp = res.body.dataUp.itemList[0];
 					console.log(this.dataUp);
 			});
 		}
+		// methods: {
+		// 	getTime(this.ind){
+		// 		// let self = this;
+		// 		let timer = setInterval(function(){
+		// 			let nowTime = new Date();
+		// 			if(this.ind === 7){
+		// 				let endTime = new Date()
+		// 			}
+					
+		// 		})
+
+		// 	}
+		// }
 	}
 </script>
 <style lang="css">
@@ -433,6 +451,17 @@
 		padding-top: 0.25rem;
 		border-radius: 50%;
 		background-color: rgba(244,143,24,.95);
+	}
+	/*新添倒计时样式*/
+	.ltTimeInfo{
+		width: 120%;
+	}
+	.ltTimeInfo span{
+		display: inline-block;
+		padding: 2px 4px;
+		background-color: #444;
+		color: #fff;
+		margin-right: 5px;
 	}
 	.rc-timeLimit .rc-timeLimit-img .hm-rc-oriprice{
 		text-decoration: line-through;
