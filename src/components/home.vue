@@ -3,7 +3,8 @@
 		<div class="hmHeader" v-if=" $route.path == '/home/hmRecommend'|| $route.path == '/home/hmLive' ">
 			<div class="hm-header">
 				<a class="hm-logo"></a>
-				<input type="text" class="hm-search" placeholder="商品搜索,共4682款好物">
+				<router-link to="/sousuo">
+				<input type="text" class="hm-search" placeholder="商品搜索,共4682款好物"></router-link>
 			</div>
 			<ul class="hm-nav">
 				<router-link to="/home/hmRecommend" tag="li" class="hm-nav-active">
