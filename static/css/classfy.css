@@ -199,8 +199,10 @@ body {
 
 .nav_classify {
   position: fixed;
-  top: 46px;
-  z-index: 4; }
+  top: 44px;
+  z-index: 4; 
+background : #fff;
+margin-top : 0;}
 
 .classifyItem {
   width: 100%; }

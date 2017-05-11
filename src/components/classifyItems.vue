@@ -10,7 +10,7 @@
             <ul class="hideMenuCont" v-show="isShow">
                 <router-link to="/home/hmRecommend" tag="li" class="toHome"><span></span>首页</router-link>
                 <router-link to="/topic" tag="li" class="toTopic"><span></span>专题</router-link>
-                <router-link to="/classify" tag="li" class="toClassify"><span></span>分类</router-link>
+                <router-link :to="{path : '/classify' ,query :{class : '居家',index : '0'}}" tag="li" class="toClassify"><span></span>分类</router-link>
                 <router-link to="/mine" tag="li" class="toMine"><span></span>个人</router-link>
             </ul>
         </header>

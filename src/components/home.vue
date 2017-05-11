@@ -96,6 +96,7 @@
 		font-size: 0;
 		margin-top: 0.125rem;	
 		display: -webkit-box;
+		/*display:-moz-box;*/
 		overflow-x: auto;
         -webkit-perspective: 1000;
         -webkit-overflow-scrolling: touch;
