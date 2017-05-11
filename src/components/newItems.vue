@@ -78,6 +78,9 @@ export default{
 .priSel{
 	border:0;
 }
+#new_pro_show{
+	padding-top:1.1rem;
+}
 #new_pro_show .pic1{
 	width:100%;
 	height:2.6rem;
