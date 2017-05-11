@@ -60,7 +60,7 @@
 			</div>
 		</div>
 		<div class="car_order_footer">
-			<div class="car_order_price">实付:￥{{itemprice}}</div>
+			<div class="car_order_price">实付:￥{{itemprice[0]}}</div>
 			<div class="car_order_pay">去付款</div>
 		</div>
 	</div>

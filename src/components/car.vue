@@ -32,7 +32,7 @@
 		</div>
 		<div class="mod_car_items" v-show="ismod" v-for="(x,index) in allC">
 			<div class="car_itemInfo">
-				<div class="car_selected_div"><span class="car_unselected"></span></div>
+				<div class="car_selected_div"><span :itemnew="x.id" class="car_unselected"></span></div>
 				<div class="car_img"><img :src='x.listPicUrl'/></div>
 				<div class="car_mod_price">
 					<p>￥{{x.retailPrice}}</p>
@@ -59,14 +59,23 @@
 				</router-link>
 				<div class="car_clear"></div>
 			</div>
+		</div>
+		<div class="car_footer_del" v-show="ismod">
+			<div class="car_del_all">
+				<div @click="selectItem"  id="allSelect" class="car_delselectall"></div>
+				<div class="delcount">全选</div>
+			</div>
+			<div class="car_del_order">
+				<div class="car_del" @click="delSelItem">删除所选</div>
+			</div>
 		</div>	
-		<div class="car_footer" v-show='count.length'>
+		<div class="car_footer" v-show='count.length&&!ismod'>
 			<div class="car_all">
 				<div class="car_selectall"></div>
 				<div class="allcount">已选({{count.length}})</div>
 			</div>
 			<div class="car_order">
-				<div class="allprice">￥{{itemprice}}</div>
+				<div class="allprice">￥{{itemprice[0]}}</div>
 				<router-link tag="div" to="/carorder" class="order_sure">下单</router-link>
 			</div>
 		</div>	
@@ -86,6 +95,7 @@
 				count : eventHub.allcount,
 				itemprice : eventHub.allprice,
 				ismod : false,
+				isdel : false,
 				a : 10
 			}
 		},
@@ -114,21 +124,33 @@
 				}
 			},
 			addnum : function(item){
-				// for(var i =0; i<this.itemCount.length;i++){
-				// 	if(this.itemCount[i].id==item.id){
-				// 		console.log(this.itemCount[i].count)
-				// 		this.itemCount[i].count ++;
-				// 	}
-				// }
-				// console.log(this.a);
-				// this.a++;
 				eventHub.$emit("addnum",item);
 			},
 			modnum : function(item){
-				// this.a = this.a-1;
-				// console.log(item);
 				eventHub.$emit("mod",item);
+			},
+			selectItem: function(){
+				if($("#allSelect").attr("class") == 'car_delselectall'){
+					$(".mod_car_items .car_unselected").attr("class","car_item_select_right");
+					$("#allSelect").attr("class","car_select_right");
+					$(".car_del").attr("class","car_selected_del");
+				}else{
+					$("#allSelect").attr("class","car_delselectall");
+					$(".car_selected_del").attr("class","car_del");
+					$(".mod_car_items .car_item_select_right").attr("class","car_unselected");
+				}
+				
+			},
+			delSelItem : function(){
+				this.ismod = false;
+				var Itemarr = [];
+				var sel = $(".mod_car_items .car_item_select_right");
+				for(var i =0; i <sel.size(); i++){
+					Itemarr.push($(sel[i]).attr("itemnew"))
+				}
+				eventHub.$emit("del",Itemarr);
 			}
+
 		},
 		created(){
 			this.itemCount = eventHub.allItem;
@@ -137,6 +159,72 @@
 	}
 </script>
 <style lang="css">
+	.car_item_select_right{
+		height: 20px;
+		background-position: 10px -72px;
+		margin-top: 18px;
+		display: inline-block;
+		width: 25px;
+		background-size: 60%;
+		background-repeat: no-repeat;
+		margin-left: 15px;
+		background-image: url(../assets/rig.png);
+	}
+	.car_select_right{
+		display: inline-block;
+		width: 25px;
+		height: 25px;
+		background-image: url(../assets/rig.png);
+		background-repeat: no-repeat;
+		background-position: 5px -125px;
+		background-size: 60%;
+	}
+	.car_selected_del{
+		color: #fff;
+		height: 100%;
+		line-height: 1.3rem;
+		text-align: center;
+		background-color: #b4282d;
+	}
+	.car_del_all{
+		margin-left: 20px;
+		display: flex;
+		align-items: center;
+	}
+	.car_delselectall{
+		display: inline-block;
+		width: 25px;
+		height: 25px;
+		background-image: url(../assets/rig.png);
+		background-repeat: no-repeat;
+		background-position: 5px -172px;
+		background-size: 60%;
+	}
+	
+	.car_del{
+		width: 100%;
+		height: 100%;
+		text-align: center;
+		line-height: 1.3rem;
+		color: #fff;
+		background-color: #f4f4f4;
+	}
+	.car_del_all{
+		width: 75%;
+	}
+	.car_del_order{
+		height: 1.3rem;
+		width: 35%;
+		float: right;
+	}
+	.car_footer_del{
+		position: fixed;
+		bottom: 1.3rem;
+		width: 100%;
+		height: 1.3rem;
+		display: flex;
+		background-color: #fff;
+	}
 	.mod_car_items input{
 		width: 100%;
 		height: 100%;
