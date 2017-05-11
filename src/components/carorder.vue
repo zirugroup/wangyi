@@ -33,7 +33,7 @@
 			</div>
 			<div class="car_order_allCount">
 				<ul>
-					<li>商品合计<i>￥714.00</i></li>
+					<li>商品合计<i>￥{{itemprice[0]}}</i></li>
 					<li>优惠券<i>-￥0.00</i></li>
 					<li>运费<i>￥0.00</i><span class="car_free">满88元免邮<span class="car_free_tri"></span></span></li>
 					<li>活动优惠<i>-￥0.00</i></li>
@@ -60,7 +60,7 @@
 			</div>
 		</div>
 		<div class="car_order_footer">
-			<div class="car_order_price">实付:￥{{itemprice[0]}}</div>
+			<div class="car_order_price">实付￥{{itemprice[0]}}</div>
 			<div class="car_order_pay">去付款</div>
 		</div>
 	</div>

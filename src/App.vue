@@ -8,6 +8,7 @@
       <router-link class="index_car" to="/car" active-class="active_index_car"><span>购物车</span><span class="footer_num" v-show="item_num.length">{{item.length}}</span></router-link>
       <router-link class="index_mine" to="/mine" active-class="active_index_mine"><span>个人</span></router-link>
     </footer>
+    <a href="#" class="app_back_top" v-show="isShowUp"></a>
   </div>
 </template>
 
@@ -19,7 +20,8 @@
           return {
             item_num:eventHub.allItem,
             item:eventHub.allcount,
-            class1 : []
+            class1 : [],
+            isShowUp: false
           }
         },
         mounted(){
@@ -33,11 +35,35 @@
                     that.class1 = that.res[0].name;
                 }
             });
+            window.addEventListener("scroll", function(){
+              if(window.scrollY > 500){
+                that.ShowUp();
+              }else{
+                that.isShowUp = false;
+              }
+              
+          })
+        },
+        methods: {
+          ShowUp : function(){
+            this.isShowUp = true;
+          }
         }
     }
 </script>
 
 <style>
+.app_back_top{
+  position: fixed;
+  right: 10px;
+  bottom: 150px;
+  width: 35px;
+  height: 35px;
+  background: url(./assets/up.png) no-repeat; 
+  background-size: 100% auto;
+  display: inline-block;
+  /*z-index: 999;*/
+}
 html{
   font-size: 40px;
 }
